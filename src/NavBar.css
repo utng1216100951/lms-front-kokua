@@ -1,0 +1,34 @@
+
+#navitem{
+    padding: 0.6rem;
+    /* IMPORTANTE */
+    text-align: center;
+    color: azure;
+    font-family: 'Montserrat', sans-serif;
+}
+#navitem:hover{
+
+    background-color: rgba(99,99,99,0.2);
+}
+
+#navico
+{
+    padding: .4rem;
+    text-align: center;
+}
+#nombrenav{
+    padding: .3rem 1.5em;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    color: #b2fcff;
+}
+#logonav{
+    padding: .4rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.bg-colorsin{
+    background: #35477d;
+}
+
+
