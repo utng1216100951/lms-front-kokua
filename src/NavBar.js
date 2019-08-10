@@ -28,7 +28,7 @@ class NavBar extends React.Component {
                 <header>
                         <MDBNavbar color="bg-colorsin" fixed="top" dark expand="md" scrolling transparent >
                             <MDBContainer>
-                                <MDBNavbarBrand id="logonav">Kokua UTNG</MDBNavbarBrand>
+                                <MDBNavbarBrand id="logonav">kōkua UTNG</MDBNavbarBrand>
                                 {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
                                 <MDBCollapse isOpen={this.state.collapse} navbar>
                                     <MDBNavbarNav className="mr-auto">
@@ -76,10 +76,11 @@ class NavBar extends React.Component {
                                                     :
                                                     <React.Fragment>
                                                         <Link to="/login">
-                                                            <MDBBtn gradient="aqua">Log in</MDBBtn>
+                                                            <MDBBtn outline rounded gradient="aqua">Log in</MDBBtn>
                                                         </Link>
                                                         <Link to="/signUp">
-                                                            <MDBBtn outline color="info">Sign Up</MDBBtn>
+                                                            <MDBBtn outline color="purple" rounded><MDBIcon icon="user"
+                                                                                                            className="mr-2"></MDBIcon> Sign up!</MDBBtn>
                                                         </Link>
 
                                                     </React.Fragment>
