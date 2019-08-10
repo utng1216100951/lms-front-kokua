@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import student from './noun_student_63368.svg'
-import teacher from './noun_Teacher_642198.svg'
+import student from './imgs/student.png'
+import teacher from './imgs/teacher.png'
+import './Login.css'
+//import './Landing.js'
 
 class Login extends Component {
     state = {
@@ -61,63 +63,61 @@ class Login extends Component {
         // console.log(this.props.errorState)
         // console.log(this.props.errorState.errorMessage)
         return (
-            <div className="ui container">
-                <div className="ui buttons">
-                        
-                        <button onClick={() => this.handleOnClick('teacher')} className="ui button">Teacher</button>
-                        <div className="or"></div>
-                        <button onClick={() => this.handleOnClick('student')} className="ui button">Student</button>
+            <div className="container-login">
+            <div className="container">
+                <div className="paddingButton">
+                    <button onClick={() => this.handleOnClick('teacher')} className="button-login">Maestro</button>
+                    <button onClick={() => this.handleOnClick('student')} className="button-login">Estudiante</button>
                 </div>
-               
                 <br></br>
                 <br></br>
-
-                {this.state.position ?
-                    <div className="ui segment" style={{width: "100px", height: "100px", margin: "auto"}}>
-                        {
-                        this.state.position === "teacher" ?
-                            <img src={teacher}></img>
+                <br></br>
+                <br></br>
+                <div className="row">
+                    <div className="col imgLogin">
+                        {this.state.position ?
+                            <div className="segment" style={{width: "100px", height: "100px", margin: "center"}}>
+                                {
+                                    this.state.position === "teacher" ?
+                                        <img src={teacher}></img>
+                                        :
+                                        <img src={student}></img>
+                                }
+                            </div>
                             :
-                            <img src={student}></img>
+                            null
                         }
-                    </div> 
-                    
-                    : 
+                    </div>
+                    <div className="col formLogin">
+                        <form onSubmit={this.handleOnSubmit}>
+                            <div className="form-group">
+                                <label className="lableLogin" >Usuario</label>
+                                <input type="text" className="form-control" name="username" required onChange={this.handleOnChange} value={this.state.username} placeholder="Nombre de Usuario"/>
+                            </div>
+                            <br></br>
+                            <div className="field">
+                                <label className="lableLogin">Contrasena</label>
+                                <input type="password" className="form-control" name="password" required onChange={this.handleOnChange} value={this.state.password} placeholder=" Password"/>
+                            </div>
+                            <br></br>
+                            <button className="btn btn-primary btnLogin" type="submit">Iniciar sesion</button>
+                        </form>
+                    </div>
+                </div>
+                <br/><br/>
+                {this.props.errorState.errors ?
+                    <div className="alert alert-danger" role="alert">
+                        <h5>Error al iniciar sesion</h5>
+                        <ul className="list">
+                            <li>{this.props.errorState.errorMessage}</li>
+                        </ul>
+                    </div>
+                    :
                     null
-                }  
-
-                <br></br>
-                <br></br>
-                <form className="ui form" onSubmit={this.handleOnSubmit}>
-                    <div className="field">
-                        <label>Username</label>
-                        <input type="text" name="username" required onChange={this.handleOnChange} value={this.state.username} placeholder="User Name"/>
-                    </div>
-
-                    <div className="field">
-                        <label>Password</label>
-                        <input type="password" name="password" required onChange={this.handleOnChange} value={this.state.password} placeholder=" Password"/>
-                    </div>
-
-                    <button className="ui button" type="submit">Login</button>
-                </form>
-                <br></br>
-                <br></br>
-
-                {this.props.errorState.errors ? 
-                <div className="ui error message">
-                <div className="header">
-                    Errors with your submission
-                </div>
-                <ul className="list">
-                    <li>{this.props.errorState.errorMessage}</li>
-                </ul>
-                </div>
-                :
-                null
                 }
-               
-    
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+            </div>
             </div>
         )
     }
@@ -129,6 +129,9 @@ function mapDispatchToProps(dispatch){
             dispatch({type:"SET_USER", payload: userObj})
         }
     }
-} 
+}
+
+
+
 
 export default connect(null, mapDispatchToProps)(Login)
