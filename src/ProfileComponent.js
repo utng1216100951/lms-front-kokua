@@ -2,6 +2,7 @@ import React, { Component,Fragment } from 'react'
 import { Bar,Polar } from 'react-chartjs-2';
 import {connect} from 'react-redux'
 import {Animated} from 'react-animated-css'
+import './ProfileComponent.css'
 
 class ProfileComponent extends Component {
     state = {
@@ -183,70 +184,83 @@ class ProfileComponent extends Component {
     render() {
         // console.log(this.state)
         return (
-            <div className="ui container" style={{marginTop: "10px", height: '80vh'}}>
-                <h1>Profile</h1>
-                {
-                    Object.keys(this.props.currentUser).length !== 0 ?
-                    <Animated animationIn="fadeInLeft" animationInDuration={2000} animationOut="fadeOut" isVisible={true}>
-                    <div className="ui centered card">
-                        <div className="image">
-                            <img src={this.props.currentUser.image_url}/>
-                        </div>
-                        <div className="content">
-                            <h1>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
-                            <p>{this.props.currentUser.bio}</p>
-                        </div>
-                    </div>
-                    </Animated>
-                    :
-                    <h1>Loading</h1>
-                }
-                <h2>View Average Grades by Subject</h2>
-                <div className="ui large buttons">
-                    <button className="ui grey button" onClick={() => this.handleGraphView("Polar")}>Polar Graph View</button>
-                    <div className="or"></div>
-                    <button className="ui black button" onClick={() => this.handleGraphView("Bar")}>Bar Graph View</button>
-                </div>
-                 
-                {
-                    this.state.graphView ? 
-                    <Fragment>
-                        {
-                            this.state.graphView === "Bar" ?
-                            <Bar
-                                data={this.state.chartData}
-                                options={{
-                                    title:{
-                                        display:true,
-                                        text: 'Bar Graph Average Grades',
-                                        fontSize:25
-                                    },
-                                    legend:{
-                                        display:false,
-                                        position: 'bottom'
-                                    }
-                                }}
-                            />
+            <div className="container-profile">
+
+                    {
+                        Object.keys(this.props.currentUser).length !== 0 ?
+                            <div className="info-profile">
+                                <br/><br/><br/><br/>
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-3">
+                                            <div className="image-profile">
+                                            <img src={this.props.currentUser.image_url} className="radius-image"/>
+                                                <br/>
+                                        </div>
+                                        </div>
+                                        <div className="col-9">
+                                            <div className="container">
+                                                <h1 className="card-title title">{this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+                                                <hr/>
+                                                <p className="card-text text">{this.props.currentUser.bio}</p>
+                                                <br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             :
-                            <Polar
-                                data={this.state.chartData}
-                                options={{
-                                title:{
-                                    display: 'hello',
-                                    text: 'Polar Chart Average Grades',
-                                    fontSize:25
-                                },
-                                legend:{
-                                    display:true,
-                                    position:'bottom'
+                            null
+                    }
+                    <br/><br/>
+                <div className="container">
+                    <h3>Ver Promedio de Calificaciones por Materia</h3>
+                    <div className="paddingButton">
+                        <button className="button-profile" onClick={() => this.handleGraphView("Polar")}>Polar Graph View</button>
+                        <button className="button-profile" onClick={() => this.handleGraphView("Bar")}>Bar Graph View</button>
+                    </div>
+                    <br/>
+                    {
+                        this.state.graphView ?
+                            <Fragment>
+                                {
+                                    this.state.graphView === "Bar" ?
+                                        <Bar
+                                            data={this.state.chartData}
+                                            options={{
+                                                title:{
+                                                    display:true,
+                                                    text: 'Bar Graph Average Grades',
+                                                    fontSize:25
+                                                },
+                                                legend:{
+                                                    display:false,
+                                                    position: 'bottom'
+                                                }
+                                            }}
+                                        />
+                                        :
+                                        <Polar
+                                            data={this.state.chartData}
+                                            options={{
+                                                title:{
+                                                    display: 'hello',
+                                                    text: 'Polar Chart Average Grades',
+                                                    fontSize:25
+                                                },
+                                                legend:{
+                                                    display:true,
+                                                    position:'bottom'
+                                                }
+                                            }}
+                                        />
                                 }
-                                }}
-                            />
-                        }
-                    </Fragment>
-                    :
-                    null
-                }                
+                            </Fragment>
+                            :
+                            null
+                    }
+                </div>
+
             </div>
         )
     }

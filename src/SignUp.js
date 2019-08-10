@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import teacher from './noun_Teacher_642198.svg'
-import student from './noun_student_63368.svg'
+import teacher from './imgs/teacher.png'
+import student from './imgs/student.png'
+import './SignUp.css'
 
 // const axios = require('axios');
 // let imageURL;
@@ -96,87 +97,88 @@ class SignUp extends Component {
     render() {
         // console.log(this.props.history)
         return (
-            <div className="ui container">
-                <div className="ui buttons">
-                        <button onClick={() => this.handleOnClick('teacher')} className="ui button">Teacher</button>
-                        <div className="or"></div>
-                        <button onClick={() => this.handleOnClick('student')} className="ui button">Student</button>
-                </div>
-                <br></br>
-                <br></br>
-                {this.state.position ?
-                    <div className="ui segment" style={{width: "100px", height: "100px", margin: "auto"}}>
-                        {
-                        this.state.position === "teacher" ?
-                            <img src={teacher}></img>
-                            :
-                            <img src={student}></img>
-                        }
-                    </div> 
-                    
-                    : 
-                    null
-                }
-                <br></br>
-                <br></br>
-                <form className="ui form" onSubmit={this.handleOnSubmit}>
-                    <div className="field">
-                        <label>Username</label>
-                        <input type="text" name="username" required onChange={this.handleOnChange} value={this.state.username} placeholder="User Name"/>
+            <div className="container-signUp">
+                <div className="container">
+                    <div className="paddingButton">
+                        <button onClick={() => this.handleOnClick('teacher')} className="button-signUp">Maestro</button>
+                        <button onClick={() => this.handleOnClick('student')} className="button-signUp">Estudiante</button>
                     </div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <div className="row">
+                        <div className="col formSignUp">
+                            <form className="form-group" onSubmit={this.handleOnSubmit}>
+                                <div className="field">
+                                    <label className="lableSignUp">Usuario</label>
+                                    <input type="text" className="form-control space" name="username" required onChange={this.handleOnChange} value={this.state.username} placeholder="Nombre de Usuario"/>
+                                </div>
 
-                    <div className="field">
-                        <label>Password</label>
-                        <input type="password" name="password" required onChange={this.handleOnChange} value={this.state.password} placeholder=" Password"/>
-                    </div>
+                                <div className="field">
+                                    <label className="lableSignUp">Contrasena</label>
+                                    <input type="password" className="form-control space" name="password" required onChange={this.handleOnChange} value={this.state.password} placeholder=" Contrasena para el usuario"/>
+                                </div>
 
-                    <div className="field">
-                        <label>First Name</label>
-                        <input type="text" name="first_name" required onChange={this.handleOnChange} value={this.state.first_name} placeholder="First Name"/>
-                    </div>
+                                <div className="field">
+                                    <label className="lableSignUp">Nombre(s)</label>
+                                    <input type="text" className="form-control space" name="first_name" required onChange={this.handleOnChange} value={this.state.first_name} placeholder="Nombres del usuario"/>
+                                </div>
 
-                    <div className="field">
-                        <label>Last Name</label>
-                        <input type="text" name="last_name" required onChange={this.handleOnChange} value={this.state.last_name} placeholder="Last Name"/>
-                    </div>
+                                <div className="field">
+                                    <label className="lableSignUp">Apellidos</label>
+                                    <input type="text" className="form-control space" name="last_name" required onChange={this.handleOnChange} value={this.state.last_name} placeholder="Apellidos del usuario"/>
+                                </div>
 
-                    <div className="field">
-                        <label>Bio</label>
-                        <input type="text" name="bio" required onChange={this.handleOnChange} value={this.state.bio} placeholder="Small Bio"/>
-                    </div>
+                                <div className="field">
+                                    <label className="lableSignUp">Descripcion</label>
+                                    <input type="text" className="form-control space" name="bio" required onChange={this.handleOnChange} value={this.state.bio} placeholder="Pequena descripcion de ti"/>
+                                </div>
 
-                    <div className="field">
-                        <label>Image URL</label>
-                        <input type="text" name="image_url" required onChange={this.handleOnChange} value={this.state.image_url} placeholder="Image URL"/>
-                        {/* <input type="file" className="inputfile ui huge button" name="image_url" required onChange={this.handlePhotoUpload} placeholder="Image URL"/> */}
-                        
-                    </div>
-                    
+                                <div className="field">
+                                    <label className="lableSignUp">Imagen del usuario</label>
+                                    <input type="text" className="form-control space" name="image_url" required onChange={this.handleOnChange} value={this.state.image_url} placeholder="URL de la imagen"/>
+                                    {/* <input type="file" className="inputfile ui huge button" name="image_url" required onChange={this.handlePhotoUpload} placeholder="Image URL"/> */}
 
-                    <button className="ui button" type="submit">Sign Up</button>
-                </form>      
-                <br></br>
-                <br></br>
-                
-                {
-                    this.state.errors.length !== 0 ? 
+                                </div>
 
-                    <div className="ui error message">
-                        <div className="header">
-                            Errors with your submission
+
+                                <button className="btn btn-primary btnSignUp" type="submit">Registrarse</button>
+                            </form>
                         </div>
-                        <ul className="list">
-                        {this.state.errors.map(error => {
-                            return <li key={this.state.errors.indexOf(error)}>{error}</li>
-                        })
-                        }
-                        </ul>
-                    </div>
-                    
-                    :
-                    null
-                }
+                        <div className="col imgSignUp">
+                            {this.state.position ?
+                                <div className="segment" style={{width: "100px", height: "100px", margin: "auto"}}>
+                                    {
+                                        this.state.position === "teacher" ?
+                                            <img src={teacher}></img>
+                                            :
+                                            <img src={student}></img>
+                                    }
+                                </div>
 
+                                :
+                                null
+                            }
+                        </div>
+                    </div>
+                    <br/>
+                    {
+                        this.state.errors.length !== 0 ?
+
+                            <div className="alert alert-danger" role="alert">
+                                <h5>Error al registrarse</h5>
+                                <ul className="list">
+                                    {this.state.errors.map(error => {
+                                        return <li key={this.state.errors.indexOf(error)}>{error}</li>
+                                    })
+                                    }
+                                </ul>
+                            </div>
+
+                            :
+                            null
+                    }
+                </div>
             </div>
             
         )
