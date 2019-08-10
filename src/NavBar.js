@@ -1,93 +1,119 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
+import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {MDBBtn, MDBCollapse, MDBIcon, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBContainer, MDBNavbarToggler} from "mdbreact";
+import {connect} from 'react-redux';
+import './NavBar.css'
 
-function NavBar(props) {
-    // console.log(props.currentUser)
-    return (
-            <div className="pusher">
-                <div className="ui inverted vertical masthead center aligned segment">
-                    <div className="ui container" style={{height:"15vh"}}>
-                        <div className="ui large secondary inverted pointing menu">
-                            {/* <a className="toc item">
-                                <i className="sidebar icon"></i>
-                            </a> */}
-                            <div className="left item">
-                                <Link to = "/home">
-                                    <div className="ui inverted button">
-                                        Home
-                                    </div>
-                                </Link>
+class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            collapse: false,
+            isWideEnough: false,
+        };
+        this.onClick = this.onClick.bind(this);
+    }
 
-                                <Link to="/about">
-                                    <div className="ui inverted button">
-                                        About
-                                    </div>
-                                </Link>
-                           </div>
-                
-                            <div className="right item">
-                                {
-                                    Object.keys(props.currentUser).length !== 0 ? //checking to see if object is empty
-                                    <React.Fragment>
-                                        <Link to={props.currentUser.position === "teacher" ? "/newCourseForm" : "/registerCourse"}>
-                                            {/* <i className="big plus square outline icon"></i> */}
-                                            <span data-tooltip={props.currentUser.position === "teacher" ? "Add New Course" : "Register for New Course"} data-position="bottom left">
-                                                <i className="plus big square outline icon"></i>
-                                            </span>
-                                        </Link>
-                                        <Link to="/courses">
-                                            <div className="ui inverted teal button">My Courses</div>
-                                        </Link>
-                                        <Link to={props.currentUser.position === "teacher" ? `/profile/teacher/${props.currentUser.id}` : `/profile/student/${props.currentUser.id}`}>
-                                            <div className="ui inverted secondary basic button">Profile</div>
-                                        </Link>
-                                            
-                                        <Link to="/home">
-                                            <div onClick={props.logOutUser} className="ui inverted red button">Log Out</div>
-                                        </Link>
-                                    </React.Fragment>
-                                    :
-                                    <React.Fragment>
-                                        <Link to="/login">
-                                            <div className="ui inverted button">Log in</div>
-                                        </Link>
-                                        <Link to="/signUp">
-                                            <div className="ui inverted button">Sign Up</div>
-                                        </Link>
-                                    </React.Fragment>     
-                                }
-                            </div>
-                        </div>
-                        <div>
-                            {
-                                Object.keys(props.currentUser).length !== 0 ?
-                                <h1>Hello, {props.currentUser.first_name}!</h1>
-                                :
-                                null
-                            }
-                        </div>
-                    </div>
-                </div>
+    onClick() {
+        this.setState({
+            collapse: !this.state.collapse,
+        });
+    }
+
+    render() {
+        var currentUser = this.props.currentUser;
+        var logOutUser = this.props.logOutUser;
+        return (
+            <div>
+                <header>
+                        <MDBNavbar color="bg-colorsin" fixed="top" dark expand="md" scrolling transparent >
+                            <MDBContainer>
+                                <MDBNavbarBrand id="logonav">Kokua UTNG</MDBNavbarBrand>
+                                {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+                                <MDBCollapse isOpen={this.state.collapse} navbar>
+                                    <MDBNavbarNav className="mr-auto">
+                                        <MDBNavbarNav left>
+                                                <Link id="navitem" to="/home">Home</Link>
+                                                <Link id="navitem" to="/about">About</Link>
+                                        </MDBNavbarNav>
+                                        <MDBNavbarNav left>
+
+                                            {
+                                                Object.keys(currentUser).length !== 0 ?
+                                                    <h4 id="nombrenav">Hello, {currentUser.first_name}!</h4>
+                                                    :
+                                                    null
+                                            }
+
+                                        </MDBNavbarNav>
+                                        <MDBNavbarNav right>
+                                            {
+                                                Object.keys(currentUser).length !== 0 ?
+                                                    <React.Fragment>
+
+
+                                                            <Link id="navico"
+                                                                  to={currentUser.position === "teacher" ? "/newCourseForm" : "/registerCourse"}>
+                                                            <span className="badge"
+                                                                  data-tooltip={currentUser.position === "teacher" ? "Add New Course" : "Register for New Course"}
+                                                                  data-position="bottom left">
+                                                            <MDBIcon far icon="plus-square" size="2x"/>
+                                                            </span>
+                                                            </Link>
+
+                                                            <Link id="navitem" to="/courses">My Courses
+                                                            </Link>
+                                                        <Link id="navitem"
+                                                              to={currentUser.position === "teacher" ? `/profile/teacher/${currentUser.id}` : `/profile/student/${currentUser.id}`}>
+                                                            Profile
+                                                        </Link>
+
+                                                        <Link id="navitem" to="/home">
+                                                            <div onClick={logOutUser} className="">Log Out</div>
+                                                        </Link>
+
+                                                    </React.Fragment>
+                                                    :
+                                                    <React.Fragment>
+                                                        <Link to="/login">
+                                                            <MDBBtn gradient="aqua">Log in</MDBBtn>
+                                                        </Link>
+                                                        <Link to="/signUp">
+                                                            <MDBBtn outline color="info">Sign Up</MDBBtn>
+                                                        </Link>
+
+                                                    </React.Fragment>
+                                            }
+                                        </MDBNavbarNav>
+                                    </MDBNavbarNav>
+
+                                </MDBCollapse>
+                            </MDBContainer>
+                        </MDBNavbar>
+                </header>
             </div>
-    )
+
+        );
+    }
 }
 
-function mapStateToProps(state){
+
+function mapStateToProps(state) {
     // console.log(state)
     return {
         currentUser: state.currentUser
     }
 }
 
-function mapDispatchToProps(dispatch){
-    return{
+function mapDispatchToProps(dispatch) {
+    return {
         logOutUser: () => {
             localStorage.clear();
             dispatch({type: "LOG_OUT"})
-            
-        } 
+
+        }
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(NavBar)
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
