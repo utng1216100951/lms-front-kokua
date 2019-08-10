@@ -216,10 +216,10 @@ class ProfileComponent extends Component {
                 <div className="container">
                     <h3>Ver Promedio de Calificaciones por Materia</h3>
                     <div className="paddingButton">
-                        <button className="button-profile" onClick={() => this.handleGraphView("Polar")}>Polar Graph View</button>
-                        <button className="button-profile" onClick={() => this.handleGraphView("Bar")}>Bar Graph View</button>
+                        <button className="button-profile" onClick={() => this.handleGraphView("Polar")}>Grafico Polar</button>
+                        <button className="button-profile" onClick={() => this.handleGraphView("Bar")}>Grafico de Barras</button>
                     </div>
-                    <br/>
+                    <br/><br/>
                     {
                         this.state.graphView ?
                             <Fragment>
@@ -230,8 +230,8 @@ class ProfileComponent extends Component {
                                             options={{
                                                 title:{
                                                     display:true,
-                                                    text: 'Bar Graph Average Grades',
-                                                    fontSize:25
+                                                    text: 'Promedio en Grafico de Barras',
+                                                    fontSize:20
                                                 },
                                                 legend:{
                                                     display:false,
@@ -245,8 +245,8 @@ class ProfileComponent extends Component {
                                             options={{
                                                 title:{
                                                     display: 'hello',
-                                                    text: 'Polar Chart Average Grades',
-                                                    fontSize:25
+                                                    text: 'Promedio en Grafico Polar',
+                                                    fontSize:20
                                                 },
                                                 legend:{
                                                     display:true,
