@@ -3,6 +3,7 @@ import { Bar,Polar } from 'react-chartjs-2';
 import {connect} from 'react-redux'
 import {Animated} from 'react-animated-css'
 import './ProfileComponent.css'
+import {MDBContainer} from "mdbreact";
 
 class ProfileComponent extends Component {
     state = {
@@ -114,12 +115,13 @@ class ProfileComponent extends Component {
     render() {
         return (
             <div className="container-profile">
-
                     {
                         Object.keys(this.props.currentUser).length !== 0 ?
                             <div className="info-profile">
                                 <br/><br/><br/><br/>
                                 <div className="container">
+                                    <Animated animationIn="fadeInRight" animationInDuration={2000} animationOut="fadeOut"
+                                              isVisible={true}>
                                     <div className="row">
                                         <div className="col-3">
                                             <div className="image-profile">
@@ -136,6 +138,7 @@ class ProfileComponent extends Component {
                                             </div>
                                         </div>
                                     </div>
+                                    </Animated>
                                 </div>
                             </div>
                             :

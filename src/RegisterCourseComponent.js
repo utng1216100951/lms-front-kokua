@@ -90,7 +90,7 @@ class RegisterCourseComponent extends Component {
         return (
         <div className="ui container">
                 <br></br>
-                <div style={{marginBottom: "20px", display: "flex", justifyContent:"center", justifyContent:"space-between"}}>
+                <div >
                 <div className="ui icon input">
                     <input onChange={this.handleOnChange} name="searchTerm" type="text" placeholder="Search Course Name"/>
                     <i className="search icon"></i>
