@@ -100,7 +100,7 @@ class Assignment extends Component {
                 {
                     Object.keys(this.props.currentUser).length !== 0 && this.props.currentUser.position === "teacher" ?
                     <Fragment>
-                        <span data-tooltip="Delete Assignment" data-position="top left">
+                        <span data-tooltip="Borrar asignación" data-position="top left">
                              <MDBIcon icon="trash" onClick={this.show} className="red-text pink-text ml-3" size="lg"/>
                             <Confirm
                                 open={this.state.open}
@@ -110,12 +110,12 @@ class Assignment extends Component {
                                 />
                         </span>
                         
-                        <span data-tooltip="Add Questions to Assignment" data-position="top left">
+                        <span data-tooltip="Agregar preguntas" data-position="top left">
                              <MDBIcon icon="edit" onClick={()=> this.props.handleAssignmentClick(this.props.assignment)}
                                       className="amber-text " size="lg pink-text ml-3"/>
                         </span>
                         <Link style={{color: 'black'}} to={{pathname: `/courses/${this.props.assignment.course_id}/assignments/${this.props.assignment.id}/submissions`, assignmentObj: this.props.assignment}}>
-                            <span data-tooltip="View Submissions" data-position="top left">
+                            <span data-tooltip="Revisar entregas" data-position="top left">
                                 <MDBIcon far icon="eye"
                                          className="cyan-text open" size="lg pink-text ml-3"/>
                             </span>
