@@ -67,7 +67,7 @@ class EditAnnouncementForm extends Component {
                      {/* <label>Information</label> */}
                      <textarea onChange={this.handleOnChange} value ={this.state.information} name="information" placeholder="Information" rows="2" ></textarea>
                  </div>
-                    <MDBBtn gradient="aqua" type="submit" value="Edit Announcement" className="ui submit button">Edit Announcement</MDBBtn>
+                    <MDBBtn gradient="aqua" type="submit" value="Editar clase" className="ui submit button">Editar clase</MDBBtn>
             </form>
             </div>
             

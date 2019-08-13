@@ -167,7 +167,7 @@ class AnnouncementCard extends Component {
                         //checks if currentUser is defined and also if the user is a teacher
                         Object.keys(this.props.currentUser).length !== 0 && this.props.currentUser.position === "teacher" ?
                             <Fragment>
-                    <span data-tooltip="Delete Announcement" data-position="top left">
+                    <span data-tooltip="Eliminar clase" data-position="top left">
                         <MDBIcon icon="trash" onClick={this.show} className="red-text pink-text ml-3" size="2x"/>
                         <Confirm
                             open={this.state.open}
@@ -176,12 +176,12 @@ class AnnouncementCard extends Component {
                             onConfirm={() => this.handleConfirm(id)}
                         />
                     </span>
-                                <span data-tooltip="Edit Announcement" data-position="top left">
+                                <span data-tooltip="Editar Clase" data-position="top left">
                                     <MDBIcon icon="edit" onClick={() => this.props.handleEditClick(id)}
                                              className="amber-text " size="2x pink-text ml-3"/>
                     </span>
 
-                                <span data-tooltip="View Comments" data-position="top left">
+                                <span data-tooltip="Ver Comentarios" data-position="top left">
                                     <MDBIcon icon="comments" onClick={() => this.handleViewCommentsClick(id)}
                                              className="cyan-text" size="2x pink-text ml-3"/>
                     </span>
@@ -189,7 +189,7 @@ class AnnouncementCard extends Component {
 
                             </Fragment>
                             :
-                            <span data-tooltip="View Comments" data-position="top left">
+                            <span data-tooltip="Ver Comentarios" data-position="top left">
                                  <MDBIcon icon="comments" onClick={() => this.handleViewCommentsClick(id)}
                                           className="cyan-text" size="2x pink-text ml-3"/>
                 </span>
