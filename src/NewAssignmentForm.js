@@ -77,27 +77,27 @@ class NewAssignmentForm extends Component {
 
                 <div className="ui container">
                     <br/>
-                    <h1>New Assignment Form</h1>
+                    <h1>Nueva asignación</h1>
                     <form className="ui form" onSubmit={this.handleSubmit}>
                         <div className="field">
-                            <label>Assignment Name</label>
+                            <label>Título</label>
                             <input onChange={this.handleOnChange} required style={{width: "80%"}} type="text"
                                    name="name"
-                                   placeholder="Name"/>
+                                   placeholder="Título"/>
 
-                            <label>Note</label>
+                            <label>Descripción</label>
                             <input onChange={this.handleOnChange} required style={{width: "80%"}} type="text"
                                    name="note"
-                                   placeholder="Note"/>
+                                   placeholder="Descripción"/>
 
-                            <label>Due Date</label>
+                            <label>Fecha</label>
                             <input onChange={this.handleOnChange} required style={{width: "80%"}} type="date"
-                                           min={this.dateToday()} name="due_date" placeholder="Date"/>
+                                           min={this.dateToday()} name="due_date" placeholder="Fecha"/>
 
 
                             <br/>
 
-                            <button className="ui button" type="submit">Submit</button>
+                            <button className="ui button" type="submit">Agregar</button>
                         </div>
                     </form>
                 </div>
