@@ -95,7 +95,7 @@ class RegisterCourseComponent extends Component {
                         <Animated animationIn="fadeInRight" animationInDuration={2000} animationOut="fadeOut"
                                   isVisible={true}>
                             <div className="row">
-                                <div className="col-6">
+                                <div className="col-6 white-text">
                                     <h2>Cursos</h2>
                                 </div>
                                 <div className="col-4">
