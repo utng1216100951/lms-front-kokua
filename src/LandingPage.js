@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom';
 import {
     MDBBtn,
     MDBCard,
@@ -47,8 +48,10 @@ class LandingPage extends Component {
                                         viene de la palabra
                                         hawaiana "kōkua" que signifiica Ayuda y en esta plataforma podrás encontrar toda
                                         la ayuda necesaria para tus tareas y proyectos escolares.</h5>
-                                    <MDBBtn rounded className="cian"><MDBIcon icon="user"
-                                                                              className="mr-2"/> Sign up!</MDBBtn>
+                                    <Link to="/signUp">
+                                        <MDBBtn rounded className="cian"><MDBIcon icon="user"
+                                                                                className="mr-2"/> Sign up!</MDBBtn>
+                                    </Link>
 
                                 </MDBCol>
                                 <MDBCol md="6" className="align-content-lg-center">
@@ -66,6 +69,7 @@ class LandingPage extends Component {
 
                 {
                     /* Cursos   */
+                    /* Imagenes de 400 de ancho x 300 de alto */
                 }
                 <section id="sectionCurInd">
                     <br/><br/>
@@ -76,60 +80,131 @@ class LandingPage extends Component {
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves/>
+                                                  src="https://blog.iron.io/wp-content/uploads/2016/01/docker-logo.png" waves/>
                                     <MDBCardBody>
-                                        <MDBCardTitle>Base de Datos (Basico)</MDBCardTitle>
-                                        <h6>Instructor: Javier Torres</h6>
+                                        <MDBCardTitle>Docker</MDBCardTitle>
+                                        <h6>Instructor: Javier</h6>
                                         <MDBCardText>
-                                            Some quick example text to build on the card title and make
-                                            up the bulk of the card&apos;s content.
+                                            DevOps
                                         </MDBCardText>
-                                        <MDBBtn href="#">Registrarse</MDBBtn>
+                                        <Link to="/login">
+                                            <MDBBtn type="button" class="btn btn-primary">Log in</MDBBtn>
+                                        </Link>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves/>
+                                                  src="https://s3-eu-west-1.amazonaws.com/devinterface-web/production/pages/9/medium/python.png?1482145054" waves/>
                                     <MDBCardBody>
-                                        <MDBCardTitle>Base de Datos (Basico)</MDBCardTitle>
-                                        <h6>Instructor: Javier Torres</h6>
+                                        <MDBCardTitle>Patrones de diseño</MDBCardTitle>
+                                        <h6>Instructor: Anastacio</h6>
                                         <MDBCardText>
-                                            Some quick example text to build on the card title and make
-                                            up the bulk of the card&apos;s content.
+                                            Fundamentos
                                         </MDBCardText>
-                                        <MDBBtn href="#">Registrarse</MDBBtn>
+                                        <Link to="/login">
+                                            <MDBBtn type="button" class="btn btn-primary">Log in</MDBBtn>
+                                        </Link>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves/>
+                                                  src="https://www.electan.com/images/thumbnails/raspberry-pi-3-2018.jpg.thumb_400x300.jpg" waves/>
                                     <MDBCardBody>
-                                        <MDBCardTitle>Base de Datos (Basico)</MDBCardTitle>
-                                        <h6>Instructor: Javier Torres</h6>
+                                        <MDBCardTitle>Raspberry pi</MDBCardTitle>
+                                        <h6>Instructor: Eduardo</h6>
                                         <MDBCardText>
-                                            Some quick example text to build on the card title and make
-                                            up the bulk of the card&apos;s content.
+                                            Hardware
                                         </MDBCardText>
-                                        <MDBBtn href="#">Registrarse</MDBBtn>
+                                        <Link to="/login">
+                                            <MDBBtn type="button" class="btn btn-primary">Log in</MDBBtn>
+                                        </Link>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves/>
+                                                  src="https://miro.medium.com/max/400/0*VX17FzlM5_ZvThzg.png" waves/>
                                     <MDBCardBody>
-                                        <MDBCardTitle>Base de Datos (Basico)</MDBCardTitle>
-                                        <h6>Instructor: Javier Torres</h6>
+                                        <MDBCardTitle>IONIC</MDBCardTitle>
+                                        <h6>Instructor: Ricardo</h6>
                                         <MDBCardText>
-                                            Some quick example text to build on the card title and make
-                                            up the bulk of the card&apos;s content.
+                                            Desarrollo Móvil
                                         </MDBCardText>
-                                        <MDBBtn href="#">Registrarse</MDBBtn>
+                                        <Link to="/login">
+                                            <MDBBtn type="button" class="btn btn-primary">Log in</MDBBtn>
+                                        </Link>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                        </MDBRow>
+                        <br/><br/>
+                        <MDBRow>
+                            <MDBCol md="3">
+                                <MDBCard style={{width: "17rem"}}>
+                                    <MDBCardImage className="img-fluid"
+                                                  src="https://miro.medium.com/max/400/0*mrQhVNHHo5F9knMR.png" waves/>
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Fundamentos de React</MDBCardTitle>
+                                        <h6>Instructor: Anastacio</h6>
+                                        <MDBCardText>
+                                            Desarrollo Web
+                                        </MDBCardText>
+                                        <Link to="/login">
+                                            <MDBBtn type="button" class="btn btn-primary">Log in</MDBBtn>
+                                        </Link>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol md="3">
+                                <MDBCard style={{width: "17rem"}}>
+                                    <MDBCardImage className="img-fluid"
+                                                  src="http://nextews.com/images/ed/42/ed42ed477e8b0ed6.jpg" waves/>
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Introducción a los algoritmos</MDBCardTitle>
+                                        <h6>Instructor: Daniel</h6>
+                                        <MDBCardText>
+                                            Fundamentos
+                                        </MDBCardText>
+                                        <Link to="/login">
+                                            <MDBBtn type="button" class="btn btn-primary">Log in</MDBBtn>
+                                        </Link>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol md="3">
+                                <MDBCard style={{width: "17rem"}}>
+                                    <MDBCardImage className="img-fluid"
+                                                  src="https://hackster.imgix.net/uploads/attachments/307792/google-assistant-rpi_PLv1yMl7Tc.png?auto=compress%2Cformat&w=900&h=675&fit=min" waves/>
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Google Assistant con Raspberry pi</MDBCardTitle>
+                                        <h6>Instructor: Javier</h6>
+                                        <MDBCardText>
+                                            Hardware
+                                        </MDBCardText>
+                                        <Link to="/login">
+                                            <MDBBtn type="button" class="btn btn-primary">Log in</MDBBtn>
+                                        </Link>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </MDBCol>
+                            <MDBCol md="3">
+                                <MDBCard style={{width: "17rem"}}>
+                                    <MDBCardImage className="img-fluid"
+                                                  src="https://cdn.dribbble.com/users/1242303/screenshots/3764450/day33.png" waves/>
+                                    <MDBCardBody>
+                                        <MDBCardTitle>Creación de un proyecto con Vue</MDBCardTitle>
+                                        <h6>Instructor: Eduardo</h6>
+                                        <MDBCardText>
+                                            Desarrollo Web
+                                        </MDBCardText>
+                                        <Link to="/login">
+                                            <MDBBtn type="button" class="btn btn-primary">Log in</MDBBtn>
+                                        </Link>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
@@ -143,66 +218,54 @@ class LandingPage extends Component {
                 <section className="sectionCurInd">
                     <br/><br/>
                     <h2 className="titulosIndex">Profesores</h2>
-                    <p className="subIndex">Todos los cursos necesarios para no reprobar.</p>
+                    <p className="subIndex">Profesores de la institución.</p>
                     <MDBContainer className="text-center text-md-left">
                         <MDBRow>
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves/>
+                                                  src="https://res.cloudinary.com/dl6vtbln4/image/upload/avatar.png" style={{height: "205px",width:"300px"}} waves/>
                                     <MDBCardBody>
-                                        <MDBCardTitle>Base de Datos (Basico)</MDBCardTitle>
-                                        <h5>Instructor: Javier Torres</h5>
+                                        <MDBCardTitle>Anastacio Rodríguez</MDBCardTitle>
                                         <MDBCardText>
-                                            Some quick example text to build on the card title and make
-                                            up the bulk of the card&apos;s content.
+                                            "El educado difiere del no educado tanto como el que vive difiere del muerto"
                                         </MDBCardText>
-                                        <MDBBtn href="#">Registrarse</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves/>
+                                                  src="https://pbs.twimg.com/profile_images/1143141947298611202/EvVbuqgR_400x400.jpg" style={{height: "205px",width:"300px"}} waves/>
                                     <MDBCardBody>
-                                        <MDBCardTitle>Base de Datos (Basico)</MDBCardTitle>
-                                        <h5>Instructor: Javier Torres</h5>
+                                        <MDBCardTitle>Javier Torres</MDBCardTitle>
                                         <MDBCardText>
-                                            Some quick example text to build on the card title and make
-                                            up the bulk of the card&apos;s content.
+                                            "Educar la mente sin educar el corazón no es educación en absoluto"
                                         </MDBCardText>
-                                        <MDBBtn href="#">Registrarse</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves/>
+                                                  src="https://scontent.fcyw4-1.fna.fbcdn.net/v/t1.0-9/20292985_1614185638599613_8596154975597453240_n.jpg?_nc_cat=101&_nc_oc=AQmFllhlR8vECep9gaUDy0goShflpW-DUlODK5yvP6pK-0b2IATVLfV7Y1Mm9iMe3FTiFtMAl-dTecKS08qRoPgJ&_nc_ht=scontent.fcyw4-1.fna&oh=8baef422e2d0384b338cd82f2407034f&oe=5DE6F85C" style={{height: "205px",width:"300px"}} waves/>
                                     <MDBCardBody>
-                                        <MDBCardTitle>Base de Datos (Basico)</MDBCardTitle>
-                                        <h5>Instructor: Javier Torres</h5>
+                                        <MDBCardTitle>Apolinar Trejo</MDBCardTitle>
                                         <MDBCardText>
-                                            Some quick example text to build on the card title and make
-                                            up the bulk of the card&apos;s content.
+                                            "La educación es un ornamento en la prosperidad y un refugio en la adversidad"
                                         </MDBCardText>
-                                        <MDBBtn href="#">Registrarse</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves/>
+                                                  src="https://scontent.fcyw4-1.fna.fbcdn.net/v/t1.0-9/580973_473910912642817_1190471618_n.jpg?_nc_cat=103&_nc_oc=AQm1pyjPwxnNSSMD7ydOQfGmg9qKyAomEmzVIiy2yLlo9MKI92jYAi8DfNk-IgjyHde8gIdi2CccLrjKkIWeBVit&_nc_ht=scontent.fcyw4-1.fna&oh=9b48cadc1d1b846ffb5bfeb0186aed74&oe=5DD3A8BD" style={{height: "205px",width:"300px"}} waves/>
                                     <MDBCardBody>
-                                        <MDBCardTitle>Base de Datos (Basico)</MDBCardTitle>
-                                        <h5>Instructor: Javier Torres</h5>
+                                        <MDBCardTitle>Eduardo Barrientos</MDBCardTitle>
                                         <MDBCardText>
-                                            Some quick example text to build on the card title and make
-                                            up the bulk of the card&apos;s content.
+                                            "La educación es el arma más poderosa que puedes usar para cambiar el mundo"
                                         </MDBCardText>
-                                        <MDBBtn href="#">Registrarse</MDBBtn>
                                     </MDBCardBody>
                                 </MDBCard>
                             </MDBCol>
@@ -219,29 +282,44 @@ class LandingPage extends Component {
 
                         <MDBRow>
                             <MDBCol md="3">
-                                <h3>Services</h3>
-                                <ul>
-                                    <li><a href="#">Web design</a></li>
-                                    <li><a href="#">Development</a></li>
-                                    <li><a href="#">Hosting</a></li>
-                                </ul>
+                                <h3>Desarrolladores</h3>
+                                <dl>
+                                    <dt>Axel Quintero</dt>
+                                    <ul>
+                                        <li><a href="https://github.com/axeljovanny" target="_blank"><i class="fab fa-github">Github</i></a></li>
+                                        <li><i class="fas fa-inbox"></i> axel.jovanny.aj@gmail.com</li>
+                                    </ul>
+                                    <dt>Ashley Quintero</dt>
+                                    <ul>
+                                        <li><a href="https://github.com/utng1216100951" target="_blank"><i class="fab fa-github">Github</i></a></li>
+                                        <li><i class="fas fa-inbox"></i> ashley.isai.ai@gmail.com</li>
+                                    </ul>
+                                    <dt>Noé Castillo</dt>
+                                    <ul>
+                                        <li><a href="https://github.com/noedcr" target="_blank"><i class="fab fa-github">Github</i></a></li>
+                                        <li><i class="fas fa-inbox"></i> noej.cr@gmail.com</li>
+                                    </ul>
+                                </dl>
                             </MDBCol>
                             <MDBCol md="3">
                                 <h3>About</h3>
                                 <ul>
-                                    <li><a href="#">Kokua</a></li>
-                                    <li><a href="#">Equipo</a></li>
-                                    <li><a href="#">Carreras</a></li>
+                                    <li><a href="/about">Kokua</a></li>
+                                    <li><a href="/about#como">¿Cómo surigió?</a></li>
+                                    <li><a href="/about#dirigido">¿A quién va dirigido?</a></li>
+                                    <li><a href="/about#fiosofia">Filosofía intitucional</a></li>
+                                    <li><a href="/about#ubicacion">Ubicación</a></li>
+                                    <li><a href="/about#desarrolladores">Desarrolladores</a></li>
                                 </ul>
                             </MDBCol>
                             <MDBCol md="6">
                                 <h3 >Kokua UTNG</h3>
-                                <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut
-                                    vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit
-                                    pulvinar dictum vel in justo.</p>
+                                <p>Aviso de privacidad</p>
+                                <p>Toda la información personal ingresada a Kokua se maneja de manera confidencial, 
+                                    el sitio web no comparte datos personales con ningún miembro de la institución 
+                                    ni con terceras partes involucradas en el desarrollo o manejo del sitio.</p>
                             </MDBCol>
                         </MDBRow>
-                        <br/><br/><br/><br/>
                     </MDBContainer>
                     <div className="footer-copyright text-center py-3">
                         <MDBContainer fluid>

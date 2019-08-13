@@ -119,7 +119,7 @@ class SignUp extends Component {
                         <div className="col-lg-6 col-md-8 login-box">
 
                             <div className="col-lg-12 login-title">
-                                Iniciar Sesión
+                                Registrarse
                             </div>
                             <div className="col-lg-12 login-form">
                                 <form onSubmit={this.handleOnSubmit}>
