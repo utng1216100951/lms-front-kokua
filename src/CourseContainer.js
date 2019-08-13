@@ -4,7 +4,7 @@ import CourseCard from './CourseCard'
 export default function CourseContainer(props) {
     // console.log(props.courses)
     return (
-    <div className="ui container" >
+    <div className="container" >
         {
             props.courses === undefined ?
             null

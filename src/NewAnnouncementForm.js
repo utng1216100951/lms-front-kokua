@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {MDBBtn, MDBIcon} from "mdbreact";
 
 
 class NewAnnouncementForm extends Component {
@@ -55,9 +56,9 @@ class NewAnnouncementForm extends Component {
                 </div>
                 <div className="field">
                      {/* <label>Information</label> */}
-                     <textarea onChange={this.handleOnChange} required name="information" placeholder="Information" rows="2" ></textarea>
+                     <textarea onChange={this.handleOnChange} required name="information" placeholder="Information" rows="2" />
                  </div>
-                <input type="submit" value="Post New Announcement" className="ui submit green button"></input>
+                <MDBBtn gradient="peach" type="submit" value="Post New Announcement" className="ui submit">Post New Announcement</MDBBtn>
             </form>
         )
     }
