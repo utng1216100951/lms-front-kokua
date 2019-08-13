@@ -18,12 +18,12 @@ function UserHomePage(props) {
                         <div className="row">
                             {
                                 props.currentUser.position === 'teacher' ?
-                                    <div className="col-12"><h1>Classes You're Teaching</h1></div>
+                                    <div className="col-12"><h1>Tus cursos</h1></div>
                                     :
                                     <React.Fragment>
-                                            <div className="col-6"><h1>Classes You Are Enrolled In</h1></div>
+                                            <div className="col-6"><h1>Cursos en los que estás registrado</h1></div>
                                             <div className="col-6 right"><Link to="/registerCourse">
-                                                <MDBBtn gradient="blue">Register for a Course</MDBBtn>
+                                                <MDBBtn gradient="blue">Registrarse en un curso</MDBBtn>
                                             </Link></div>
                                     </React.Fragment>
                             }
