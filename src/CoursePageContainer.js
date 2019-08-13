@@ -98,8 +98,8 @@ class CoursePageContainer extends Component {
                     <MDBRow>
                         <MDBCol size="4" className=" float-none white z-depth-1 py-2 px-2 left ">
                             <MDBCardBody>
-                                <MDBCardTitle>Assignments</MDBCardTitle>
-                                <p className="pb-4">Example of Material Design Form</p>
+                                <MDBCardTitle>Asignaciones</MDBCardTitle>
+                                <p className="pb-4">Apartado para asignar preguntas sobre tus cursos</p>
                                 <div className="six wide column">
                                     <div className="ui container">
                                         <div style={{
@@ -112,7 +112,7 @@ class CoursePageContainer extends Component {
                                                     <Link style={{color: 'black'}}
                                                           to={`${this.props.location.pathname}/assignments/new`}>
 
-                                                    <span data-tooltip="Add New Assignment" data-position="bottom right">
+                                                    <span data-tooltip="Nueva asignaci'on" data-position="bottom right">
                                                        <MDBIcon size={"2x"} icon="plus-circle" />
                                                     </span>
                                                     </Link>
@@ -146,8 +146,8 @@ class CoursePageContainer extends Component {
                         </MDBCol>
                         <MDBCol size="7" className="mx-auto float-none white z-depth-1 py-2 px-2 right">
                             <MDBCardBody>
-                                <MDBCardTitle>Announcements</MDBCardTitle>
-                                <p className="pb-4">Example of Material Design Form</p>
+                                <MDBCardTitle>Clases</MDBCardTitle>
+                                <p className="pb-4">Aprende de los mejores</p>
                                 <div className="ten wide column">
                                     <div>
 
@@ -188,7 +188,7 @@ class CoursePageContainer extends Component {
                                                         :
                                                         <div className="ui segment">
                                                             <div className="ui active inverted dimmer">
-                                                                <div className="ui large text loader">Loading</div>
+                                                                <div className="ui large text loader">Cargando</div>
                                                             </div>
                                                         </div>
                                                 }

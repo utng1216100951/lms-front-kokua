@@ -104,7 +104,7 @@ class Assignment extends Component {
                              <MDBIcon icon="trash" onClick={this.show} className="red-text pink-text ml-3" size="lg"/>
                             <Confirm
                                 open={this.state.open}
-                                header='Deleting this assignment.'
+                                header='¿Deseas eliminar esta asignación?'
                                 onCancel={this.handleCancel}
                                 onConfirm={() => this.handleConfirm(this.props.assignment.id)}
                                 />
@@ -128,12 +128,12 @@ class Assignment extends Component {
                         {
                             this.checkIfSubmitted() ?
                             <Fragment>
-                                <MDBBtn gradient="aqua" className="ui disabled">Submitted</MDBBtn>
+                                <MDBBtn gradient="aqua" className="ui disabled">Presentado</MDBBtn>
                                  {this.checkIfSubmitted().created_at === this.checkIfSubmitted().updated_at ? 
-                                    <h4>Grade Pending</h4> 
+                                    <h4>Pendiente</h4>
                                     :
                                     <Fragment>
-                                    <h4>Graded! Result: </h4>
+                                    <h4>Resultado!! : </h4>
                                     <div className="ui indicating progress stats" data-percent={this.checkIfSubmitted().grade_assigned} >
                                         <div className="bar" style={{width: `${this.checkIfSubmitted().grade_assigned}%`, backgroundColor: this.checkGradeColor(this.checkIfSubmitted().grade_assigned)}}>
                                             <div className="progress" >{this.checkIfSubmitted().grade_assigned}%</div>
@@ -149,7 +149,7 @@ class Assignment extends Component {
                             this.props.assignment.problems.length !== 0 ?
                                 <MDBBtn gradient="peach" onClick={() => this.props.handleAssignmentClick(this.props.assignment)} className="ui button">Start</MDBBtn>
                             :
-                                <MDBBtn gradient="peach"  className="ui disabled button">No Problems Assigned</MDBBtn>
+                                <MDBBtn gradient="peach"  className="ui disabled button">No hay preguntas asignadas</MDBBtn>
                         }
                     </Fragment>
                     // <button onClick={() => this.props.handleAssignmentClick(this.props.assignment)} className="ui teal button">Start</button>

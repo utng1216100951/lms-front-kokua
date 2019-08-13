@@ -118,7 +118,7 @@ function CourseCard(props) {
                                  <MDBIcon onClick={() => show()} icon="trash-alt" size="2x" className="red-text pr-3"/>
                             <Confirm
                                 open={open}
-                                header='Removing this Course.'
+                                header='¿Deseas eliminar este curso?'
                                 onCancel={() => handleCancel()}
                                 onConfirm={() => handleConfirm()}
                             />
@@ -126,10 +126,10 @@ function CourseCard(props) {
 
                                 :
                                 <React.Fragment>
-                                    <MDBBtn onClick={() => studentShow()} className="">Drop Course</MDBBtn>
+                                    <MDBBtn onClick={() => studentShow()} className="">Eliminar curso</MDBBtn>
                                     <Confirm
                                         open={openStudent}
-                                        header='Removing this Course.'
+                                        header='¿Deseas salir de este curso?'
                                         onCancel={() => studentHandleCancel()}
                                         onConfirm={() => studentHandleConfirm()}
                                     />

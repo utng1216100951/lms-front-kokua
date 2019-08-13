@@ -150,7 +150,7 @@ class AnnouncementCard extends Component {
             <div className="ui segment">
                 <h1>{title}</h1>
                 <p>{information}</p>
-                <p>Posted on: <Moment format="MM/DD/YYYY">{created_at}</Moment></p>
+                <p>Publicado el : <Moment format="MM/DD/YYYY">{created_at}</Moment></p>
 
                 {
                     video_url ?
@@ -205,7 +205,7 @@ class AnnouncementCard extends Component {
                                                   placeholder="Share your comments or thoughts! Keep it friendly!"
                                                   onChange={this.handleCommentChange} rows="2"/>
                                     </div>
-                                    <MDBBtn gradient="purple" type="submit" value="Submit">Comment</MDBBtn>
+                                    <MDBBtn gradient="purple" type="submit" value="Submit">Comentarios</MDBBtn>
                                 </form>
                                 {
                                     this.state.allComments.length !== 0 ?
@@ -242,7 +242,7 @@ class AnnouncementCard extends Component {
                                         })
                                         :
                                         <div className="ui segment">
-                                            <h2>No Comments...yet</h2>
+                                            <h2>No hay comentarios aún</h2>
                                         </div>
 
                                 }
