@@ -112,7 +112,7 @@ class CoursePageContainer extends Component {
                                                     <Link style={{color: 'black'}}
                                                           to={`${this.props.location.pathname}/assignments/new`}>
 
-                                                    <span data-tooltip="Nueva asignaci'on" data-position="bottom right">
+                                                    <span data-tooltip="Nueva asignación" data-position="bottom right">
                                                        <MDBIcon size={"2x"} icon="plus-circle" />
                                                     </span>
                                                     </Link>
@@ -126,7 +126,7 @@ class CoursePageContainer extends Component {
                                                 // null
                                                 this.props.course.assignments.length === 0 ?
                                                     <div className="ui segment">
-                                                        <h2>No Assignments Yet!</h2>
+                                                        <h2>Todavía no hay asignaturas</h2>
                                                     </div>
                                                     :
                                                     this.props.course.assignments.map(assignment => {
@@ -167,7 +167,7 @@ class CoursePageContainer extends Component {
                                                     this.props.course.announcements !== undefined ?
                                                         this.props.course.announcements.length === 0 ?
                                                             <div className="ui segment">
-                                                                <h2>No Announcements Yet!</h2>
+                                                                <h2>Todavía no hay clases</h2>
                                                             </div>
 
                                                             :
