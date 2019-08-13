@@ -55,7 +55,7 @@ class Login extends Component {
                 })
         } else {
             // alert('Please choose if a teacher or student')
-            this.props.handleErrorMessage("Please select if a teacher or student")
+            this.props.handleErrorMessage("Por favor seleccionar Maestro o Estudiante")
         }
     }
 
@@ -96,16 +96,16 @@ class Login extends Component {
                                                     className="button-login">Estudiante
                                             </button>
                                         <div className="form-group">
-                                            <label className="form-control-label">USERNAME</label>
+                                            <label className="form-control-label">Usuario</label>
                                             <input type="text" className="form-control" name="username" required
                                                    onChange={this.handleOnChange} value={this.state.username}
-                                                   placeholder="Nombre de Usuario"/>
+                                                   placeholder="Usuario"/>
                                         </div>
                                         <div className="form-group">
-                                            <label className="form-control-label">PASSWORD</label>
+                                            <label className="form-control-label">Contraseña</label>
                                             <input type="password" className="form-control" name="password" required
                                                    onChange={this.handleOnChange} value={this.state.password}
-                                                   placeholder=" Password"/>
+                                                   placeholder=" Contraseña"/>
                                         </div>
                                         <div className="col-lg-12 loginbttm">
                                             <div className="col-lg-12 login-btm login-text">
@@ -121,7 +121,7 @@ class Login extends Component {
                                                 }
                                             </div>
                                             <div className="col-lg-12 login-btm login-button">
-                                                <button type="submit" className="btn peach-gradient">LOGIN</button>
+                                                <button type="submit" className="btn peach-gradient">Log in</button>
                                             </div>
                                         </div>
                                     </form>

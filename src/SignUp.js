@@ -88,7 +88,7 @@ class SignUp extends Component {
         } else {
             // alert('Please choose if a teacher or student')
             this.setState({
-                errors: [...this.state.errors, "Please choose if a teacher or student"]
+                errors: [...this.state.errors, "Por favor seleccionar Maestro o Estudiante"]
             })
             this.timeOut()
         }
@@ -135,7 +135,7 @@ class SignUp extends Component {
                                                 <label className="form-control-label">Usuario</label>
                                                 <input type="text" className="form-control" name="username" required
                                                        onChange={this.handleOnChange} value={this.state.username}
-                                                       placeholder="Nombre de Usuario"/>
+                                                       placeholder="Usuario"/>
 
                                             </div>
                                         </div>
@@ -144,7 +144,7 @@ class SignUp extends Component {
                                                 <label className="form-control-label">Contraseña</label>
                                                 <input type="password" className="form-control" name="password" required
                                                        onChange={this.handleOnChange} value={this.state.password}
-                                                       placeholder=" Contraseña para el usuario"/>
+                                                       placeholder=" Contraseña"/>
 
                                             </div>
                                         </div>
@@ -157,7 +157,7 @@ class SignUp extends Component {
                                                 <input type="text" className="form-control space" name="first_name"
                                                        required
                                                        onChange={this.handleOnChange} value={this.state.first_name}
-                                                       placeholder="Nombres"/>
+                                                       placeholder="Nombre(s)"/>
 
                                             </div>
                                         </div>
@@ -167,7 +167,7 @@ class SignUp extends Component {
                                                 <input type="text" className="form-control space" name="last_name"
                                                        required
                                                        onChange={this.handleOnChange} value={this.state.last_name}
-                                                       placeholder="Apellidos"/>
+                                                       placeholder="Apellido(s)"/>
 
                                             </div>
                                         </div>
@@ -178,7 +178,7 @@ class SignUp extends Component {
                                         <label className="form-control-label">Descripción</label>
                                         <input type="text" className="form-control space" name="bio" required
                                                onChange={this.handleOnChange} value={this.state.bio}
-                                               placeholder="Pequeña descripción sobre tí"/>
+                                               placeholder="Descripción personal"/>
 
                                     </div>
                                     <div className="form-group">
