@@ -114,7 +114,7 @@ function CourseCard(props) {
                     </Link>
                         {
                             props.currentUser.position === 'teacher' ?
-                                <span data-tooltip="Delete Course" data-position="bottom left">
+                                <span data-tooltip="Eliminar curso" data-position="bottom left">
                                  <MDBIcon onClick={() => show()} icon="trash-alt" size="2x" className="red-text pr-3"/>
                             <Confirm
                                 open={open}

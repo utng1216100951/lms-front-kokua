@@ -202,7 +202,7 @@ class AnnouncementCard extends Component {
                                     <div className="field">
                                         <br></br>
                                         <textarea required name="comment"
-                                                  placeholder="Share your comments or thoughts! Keep it friendly!"
+                                                  placeholder="¡Comparte tus comentarios y pensamientos! "
                                                   onChange={this.handleCommentChange} rows="2"/>
                                     </div>
                                     <MDBBtn gradient="purple" type="submit" value="Submit">Comentarios</MDBBtn>

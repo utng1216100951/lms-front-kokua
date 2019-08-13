@@ -78,9 +78,9 @@ class RegisterCourseComponent extends Component {
     }
     handleText = (courseInput) => {
         if (this.foundMatchMethod(courseInput)) {
-            return "Already Registered"
+            return "Añadido"
         } else {
-            return "Register"
+            return "Registrar"
         }
     }
 
@@ -101,7 +101,7 @@ class RegisterCourseComponent extends Component {
                                 <div className="col-4">
                                     <div className="ui icon input">
                                         <input onChange={this.handleOnChange} name="searchTerm" type="text"
-                                               placeholder="Search Course Name"/>
+                                               placeholder="Buscar curso"/>
                                         <i className="search icon"></i>
                                     </div>
 
@@ -110,11 +110,11 @@ class RegisterCourseComponent extends Component {
                                 <div className="col-2">
                                     <div className="ui compact menu">
                                         <div className="ui simple dropdown item dropi">
-                                            Sort By Subject
+                                            Ordenar por materia
                                             <i className="dropdown icon"></i>
                                             <div className="menu">
                                                 <div onClick={() => this.handleSubjectClick("")} className="item">All
-                                                    Subjects
+                                                    Materias
                                                 </div>
                                                 {this.props.subjects.map(subject => {
                                                     return <div key={subject.id}

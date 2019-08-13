@@ -49,7 +49,7 @@ class NavBar extends React.Component {
 
                                         {
                                             Object.keys(currentUser).length !== 0 ?
-                                                <h4 id="nombrenav">Hello, {currentUser.first_name}!</h4>
+                                                <h4 id="nombrenav">Hola, {currentUser.first_name}!</h4>
                                                 :
                                                 null
                                         }
@@ -64,32 +64,32 @@ class NavBar extends React.Component {
                                                     <Link id="navico"
                                                           to={currentUser.position === "teacher" ? "/newCourseForm" : "/registerCourse"}>
                                                             <span className="badge"
-                                                                  data-tooltip={currentUser.position === "teacher" ? "Add New Course" : "Register for New Course"}
+                                                                  data-tooltip={currentUser.position === "teacher" ? "Añadir un curso" : "Registrarse en un nuevo curso"}
                                                                   data-position="bottom left">
                                                             <MDBIcon far icon="plus-square" size="2x"/>
                                                             </span>
                                                     </Link>
 
-                                                    <Link id="navitem" to="/courses">My Courses
+                                                    <Link id="navitem" to="/courses">Mis Cursos
                                                     </Link>
                                                     <Link id="navitem"
                                                           to={currentUser.position === "teacher" ? `/profile/teacher/${currentUser.id}` : `/profile/student/${currentUser.id}`}>
-                                                        Profile
+                                                        Perfil
                                                     </Link>
 
                                                     <Link id="navitem" to="/home">
-                                                        <div onClick={logOutUser} className="">Log Out</div>
+                                                        <div onClick={logOutUser} className="">Salir</div>
                                                     </Link>
 
                                                 </React.Fragment>
                                                 :
                                                 <React.Fragment>
                                                     <Link to="/login">
-                                                        <MDBBtn outline rounded gradient="purple">Log in</MDBBtn>
+                                                        <MDBBtn outline rounded gradient="purple">Iniciar Sesión</MDBBtn>
                                                     </Link>
                                                     <Link to="/signUp">
                                                         <MDBBtn outline rounded gradient="blue">
-                                                            <MDBIcon icon="user" className="mr-2"/> Sign up!</MDBBtn>
+                                                            <MDBIcon icon="user" className="mr-2"/>Registrate!</MDBBtn>
                                                     </Link>
 
                                                 </React.Fragment>
