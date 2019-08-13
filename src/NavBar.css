@@ -1,0 +1,44 @@
+
+#navitem {
+    padding: 0.8em;
+    /* IMPORTANTE */
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    color: azure;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#navitem:hover {
+    background-color: rgba(99, 99, 99, 0.2);
+}
+
+#navico {
+    padding: .4rem;
+    text-align: center;
+}
+
+#nombrenav {
+    padding: .8rem 3em;
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+    color: #61f2f5;
+}
+
+#logonav {
+    padding: .0em;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: x-large;
+}
+
+.bg-colorsin {
+    background: #e15249;
+}
+
+.signavi {
+    background-color: white;
+}
+
+
