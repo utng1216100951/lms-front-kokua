@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Moment from 'react-moment'
 import {Link} from 'react-router-dom'
 import {Confirm} from 'semantic-ui-react'
+import {MDBBtn, MDBIcon} from "mdbreact";
 
 const lateStyle = {
     color: "red"
@@ -91,17 +92,16 @@ class Assignment extends Component {
     
         return (
             <div className="ui segment">
-                <h3>{this.props.assignment.name}</h3>
-                <h4>{this.props.assignment.note}</h4>
+                <h4>{this.props.assignment.name}</h4>
+                <h3>{this.props.assignment.note}</h3>
                 {/* checks if assignment is late, displaying the text as red */}
-                <h4>Due: <Moment style={this.props.assignment.due_date < this.dateToday() ? lateStyle : null} format="MM/DD/YYYY">{this.props.assignment.due_date}</Moment></h4>
-                {/* <h1><Moment format="MM/DD/YYYY">{Date.now()}</Moment></h1>  */}
-                {/* <h4>Due {<Moment fromNow>{this.props.assignment.due_date}</Moment>}</h4> */}
+                <h6>Due: <Moment style={this.props.assignment.due_date < this.dateToday() ? lateStyle : null} format="MM/DD/YYYY">{this.props.assignment.due_date}</Moment></h6>
+
                 {
                     Object.keys(this.props.currentUser).length !== 0 && this.props.currentUser.position === "teacher" ?
                     <Fragment>
                         <span data-tooltip="Delete Assignment" data-position="top left">
-                            <i onClick={this.show} className="trash red big icon"></i> 
+                             <MDBIcon icon="trash" onClick={this.show} className="red-text pink-text ml-3" size="lg"/>
                             <Confirm
                                 open={this.state.open}
                                 header='Deleting this assignment.'
@@ -111,11 +111,13 @@ class Assignment extends Component {
                         </span>
                         
                         <span data-tooltip="Add Questions to Assignment" data-position="top left">
-                            <i onClick={()=> this.props.handleAssignmentClick(this.props.assignment)}className="edit violet big icon"></i>   
+                             <MDBIcon icon="edit" onClick={()=> this.props.handleAssignmentClick(this.props.assignment)}
+                                      className="amber-text " size="lg pink-text ml-3"/>
                         </span>
                         <Link style={{color: 'black'}} to={{pathname: `/courses/${this.props.assignment.course_id}/assignments/${this.props.assignment.id}/submissions`, assignmentObj: this.props.assignment}}>
-                            <span data-tooltip="View Submissions" data-position="top left"> 
-                                <i className="folder orange open outline big icon"></i>
+                            <span data-tooltip="View Submissions" data-position="top left">
+                                <MDBIcon far icon="eye"
+                                         className="cyan-text open" size="lg pink-text ml-3"/>
                             </span>
                         </Link>
                         
@@ -126,18 +128,18 @@ class Assignment extends Component {
                         {
                             this.checkIfSubmitted() ?
                             <Fragment>
-                                 <button className="ui disabled red button">Submitted</button>
+                                <MDBBtn gradient="aqua" className="ui disabled">Submitted</MDBBtn>
                                  {this.checkIfSubmitted().created_at === this.checkIfSubmitted().updated_at ? 
                                     <h4>Grade Pending</h4> 
                                     :
                                     <Fragment>
                                     <h4>Graded! Result: </h4>
-                                        {/* <span style={this.checkGradeColor(this.checkIfSubmitted().grade_assigned)}>{this.checkIfSubmitted().grade_assigned}</span>%</h4> */}
                                     <div className="ui indicating progress stats" data-percent={this.checkIfSubmitted().grade_assigned} >
                                         <div className="bar" style={{width: `${this.checkIfSubmitted().grade_assigned}%`, backgroundColor: this.checkGradeColor(this.checkIfSubmitted().grade_assigned)}}>
                                             <div className="progress" >{this.checkIfSubmitted().grade_assigned}%</div>
                                         </div>
                                     </div>
+
                                     </Fragment>
                                 }
                             </Fragment> 
@@ -145,9 +147,9 @@ class Assignment extends Component {
                             
                             :
                             this.props.assignment.problems.length !== 0 ?
-                            <button onClick={() => this.props.handleAssignmentClick(this.props.assignment)} className="ui teal button">Start</button>
+                                <MDBBtn gradient="peach" onClick={() => this.props.handleAssignmentClick(this.props.assignment)} className="ui button">Start</MDBBtn>
                             :
-                            <button className="ui teal disabled button">No Problems Assigned</button>
+                                <MDBBtn gradient="peach"  className="ui disabled button">No Problems Assigned</MDBBtn>
                         }
                     </Fragment>
                     // <button onClick={() => this.props.handleAssignmentClick(this.props.assignment)} className="ui teal button">Start</button>
