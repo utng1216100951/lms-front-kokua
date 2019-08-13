@@ -7,11 +7,11 @@ import './ProfileComponent.css'
 class ProfileComponent extends Component {
     state = {
         chartData: {},
-        mathAverage: 0,
-        scienceAverage: 0,
-        literatureAverage: 0,
-        historyAverage: 0,
-        technologyAverage: 0,
+        devOpsAverage: 0,
+        webAverage: 0,
+        movilAverage: 0,
+        hardwareAverage: 0,
+        fundamentosAverage: 0,
         currentStudent: {},
         graphView: ''
     }
@@ -45,24 +45,20 @@ class ProfileComponent extends Component {
             }
           });
     }
-    getChartData(math, science, literature, history, technology){
+    getChartData(devOps, web, movil, hardware, fundamentos){
         this.setState({
           chartData:{
-            labels: ['Math', 'Science', 'Literature', 'History', 'Technology'],
+            labels: ['DevOps', 'Web', 'Movil', 'Hardware', 'Fundamentos'],
             datasets:[
               {
                 label:'Population',
                 data:[
-                    // this.state.mathAverage,
-                    // this.state.scienceAverage,
-                    // this.state.literatureAverage,
-                    // this.state.historyAverage,
-                    // this.state.technologyAverage
-                    math,
-                    science,
-                    literature,
-                    history,
-                    technology
+
+                    devOps,
+                    web,
+                    movil,
+                    hardware,
+                    fundamentos
                 ],
                 backgroundColor:[
                   'rgba(255, 99, 132, 0.6)',
@@ -89,60 +85,7 @@ class ProfileComponent extends Component {
         scroll.scrollToBottom()
       }
 
-    //   averageCalculator = (scoresArray) => {
-    //     let totalScore = 0;
-    //     scoresArray.map(score => {
-    //         totalScore += score.grade_assigned
-    //     })
-    //     if(scoresArray.length !== 0){
-    //         return totalScore / scoresArray.length
-    //     }
-    //     else{
-    //         return 0
-    //     }
-        
-    //   }
 
-    //   gradeSorter = (gradeData) => {
-        // console.log(gradeData)
-
-        // let mathScores = [];
-        // let scienceScores = [];
-        // let literatureScores = [];
-        // let historyScores = [];
-        // let technologyScores = [];
-
-        // gradeData.grades.map(grade => {
-        //     switch(grade.subject){
-        //         case "Math":
-        //             mathScores = [...mathScores, grade]
-        //         break;
-        //         case "Science":
-        //             scienceScores = [...scienceScores, grade]
-        //         break;
-        //         case "Literature":
-        //             literatureScores = [...literatureScores, grade]
-        //         break;
-        //         case "History":
-        //             historyScores = [...historyScores, grade]
-        //         break;
-        //         case "Technology":
-        //             technologyScores = [...technologyScores, grade]
-        //         break;
-        //         default: return null
-        //     }
-        // })
-        // console.log(this.averageCalculator(mathScores))
-        // console.log(literatureAverage)
-        // console.log(scienceAverage)
-        // this.setState({
-        //     mathAverage: this.averageCalculator(mathScores),
-        //     scienceAverage: this.averageCalculator(scienceScores),
-        //     literatureAverage: this.averageCalculator(literatureScores),
-        //     historyAverage: this.averageCalculator(historyScores),
-        //     technologyAverage: this.averageCalculator(technologyScores)
-        // })     
-    //   }
 
       componentDidMount = () => {
         const token = localStorage.getItem("token")
@@ -157,32 +100,18 @@ class ProfileComponent extends Component {
         })
         .then(resp => resp.json())
         .then(data => {
-            // console.log(data)
-            // this.gradeSorter(data)
-            // this.getChartData();
-            // this.setState({
-            //     currentStudent: data.student
-            // })
+
             if(path === "teacher"){
-                // console.log(data) //data presents teacher courses with course averages
                 this.getChartDataTeacher(data)
             }
             else{
-                this.getChartData(data.math, data.science, data.literature, data.history, data.technology); 
+                this.getChartData(data.devOps, data.web, data.movil, data.hardware, data.fundamentos);
             } 
-            // this.setState({
-            //     mathAverage: data.math,
-            //     scienceAverage: data.science,
-            //     literatureAverage: data.literature,
-            //     historyAverage: data.history,
-            //     technologyAverage: data.technology
-            // })
+
         })
-        // this.getChartData(data.math, data.science, data.literature, data.history, data.technology);   
     }
        
     render() {
-        // console.log(this.state)
         return (
             <div className="container-profile">
 
@@ -214,12 +143,12 @@ class ProfileComponent extends Component {
                     }
                     <br/><br/>
                 <div className="container">
-                    <h3>Ver Promedio de Calificaciones por Materia</h3>
+                    <h4>Ver Promedio de Calificaciones por Materia</h4>
                     <div className="paddingButton">
                         <button className="button-profile" onClick={() => this.handleGraphView("Polar")}>Grafico Polar</button>
                         <button className="button-profile" onClick={() => this.handleGraphView("Bar")}>Grafico de Barras</button>
                     </div>
-                    <br/><br/>
+                    <br/>
                     {
                         this.state.graphView ?
                             <Fragment>
@@ -259,6 +188,7 @@ class ProfileComponent extends Component {
                             :
                             null
                     }
+                    <br/>
                 </div>
 
             </div>
