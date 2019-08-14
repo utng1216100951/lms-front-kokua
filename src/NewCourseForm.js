@@ -86,16 +86,16 @@ class NewCourseForm extends Component {
                 </MDBJumbotron>
                 <div className="ui container">
                     <br></br>
-                    <h1>New Course Form</h1>
+                    <h1>Crear Curso</h1>
                     <form className="ui form" onSubmit={this.handleSubmit}>
                         <div className="field">
-                            <label>Course Name</label>
-                            <input onChange={this.handleOnChange} style={{width: "80%"}} required type="text" name="name" placeholder="Course Name"/>
+                            <label>Nombre del curso</label>
+                            <input onChange={this.handleOnChange} style={{width: "80%"}} required type="text" name="name" placeholder="Nombre"/>
 
                             <br></br>
 
                             <select onChange={this.handleOnChange} style={{width: "80%", margin: "auto"}} name="subject_id" className="ui fluid dropdown">
-                                <option value="">Select Subject</option>
+                                <option value="">Seleccinar materia</option>
 
                                 {this.props.subjects.map(subject => {
                                     return <option key={subject.id} value={subject.id}>{subject.name}</option>
@@ -103,14 +103,14 @@ class NewCourseForm extends Component {
                             </select>
 
                             <br></br>
-                            <MDBBtn gradient="peach" type="submit">Submit</MDBBtn>
+                            <MDBBtn gradient="peach" type="submit">Crear</MDBBtn>
                         </div>
                     </form>
                     {
                         this.state.errors ?
                             <div className="ui error message">
                                 <div className="header">
-                                    Errors with your submission
+                                    Error al crear
                                 </div>
                                 <ul className="list">
                                     <li>{this.state.errors}</li>
