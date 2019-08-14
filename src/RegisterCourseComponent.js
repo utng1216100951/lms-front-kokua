@@ -95,7 +95,7 @@ class RegisterCourseComponent extends Component {
                         <Animated animationIn="fadeInRight" animationInDuration={2000} animationOut="fadeOut"
                                   isVisible={true}>
                             <div className="row">
-                                <div className="col-6 white-text">
+                                <div className="col-8 white-text">
                                     <h2>Cursos</h2>
                                 </div>
                                 <div className="col-4">
@@ -107,25 +107,6 @@ class RegisterCourseComponent extends Component {
 
 
                                 </div>
-                                <div className="col-2">
-                                    <div className="ui compact menu">
-                                        <div className="ui simple dropdown item dropi">
-                                            Ordenar por materia
-                                            <i className="dropdown icon"></i>
-                                            <div className="menu">
-                                                <div onClick={() => this.handleSubjectClick("")} className="item">All
-                                                    Materias
-                                                </div>
-                                                {this.props.subjects.map(subject => {
-                                                    return <div key={subject.id}
-                                                                onClick={() => this.handleSubjectClick(subject.name)}
-                                                                className="item">{subject.name}</div>
-                                                })}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </Animated>
                     </MDBContainer>
@@ -135,6 +116,25 @@ class RegisterCourseComponent extends Component {
 
                 </div>
                 <div className="ui container">
+                    <div className="col-2">
+                        <div className="ui compact menu">
+                            <div className="ui simple dropdown item dropi">
+                                Ordenar por materia
+                                <i className="dropdown icon"></i>
+                                <div className="menu">
+                                    <div onClick={() => this.handleSubjectClick("")} className="item">Todas las
+                                        Materias
+                                    </div>
+                                    {this.props.subjects.map(subject => {
+                                        return <div key={subject.id}
+                                                    onClick={() => this.handleSubjectClick(subject.name)}
+                                                    className="item">{subject.name}</div>
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/><br/><br/>
                     <div className="ui three column grid">
                         {this.format(this.props.allCourses).map(course => {
                             if (course.subject.name.includes(this.state.selectedSubject)) { //checks if subject matches sort
