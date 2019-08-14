@@ -44,9 +44,9 @@ class NewProblemsComponent extends Component {
             <div>
                 <form onSubmit={this.handleOnSubmit} className="ui tiny form">
                         <div className="field">
-                            <input onChange={this.handleOnChange} required placeholder="Question" type="text" name="question"/>
+                            <input onChange={this.handleOnChange} required placeholder="Pregunta" type="text" name="question"/>
                         </div>
-                    <MDBBtn gradient="aqua" type="submit" value="Submit Question" className="ui green submit button">Submit Question</MDBBtn>
+                    <MDBBtn gradient="aqua" type="submit" value="Submit Question" className="ui green submit button">Agregar pregunta</MDBBtn>
                         
                     </form>
                     {/* {problems.map(problem => {
@@ -59,7 +59,7 @@ class NewProblemsComponent extends Component {
                         if(assignment.id === id){
                             return assignment.problems.map(problem => {
                                 return <div className="ui segment" key={problem.id}>
-                                    <h2>Question: {problem.question}</h2>
+                                    <h2>Pregunta: {problem.question}</h2>
 
                                 </div>
                             })  

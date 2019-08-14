@@ -112,8 +112,8 @@ class SubmittedAssignments extends Component {
                     <MDBRow>
                         <MDBCol size="4" className=" float-none white z-depth-1 py-2 px-2 left ">
                             <MDBCardBody>
-                                <MDBCardTitle>Submitted Assignments</MDBCardTitle>
-                                <p className="pb-4">Example of Material Design Form</p>
+                                <MDBCardTitle>Revisión de la asignación</MDBCardTitle>
+                                <p className="pb-4">Entregas realizadas</p>
                                 <div className="six wide column">
                                     <div className="ui container">
                                         <div style={{
@@ -137,12 +137,12 @@ class SubmittedAssignments extends Component {
                                                                     <button className="ui yellow button"
                                                                             onClick={() => {
                                                                                 this.handleAssignmentClick(submission.id)
-                                                                            }}>View
+                                                                            }}>Ver
                                                                     </button>
                                                                     {
                                                                         submission.created_at !== submission.updated_at ?
                                                                             <Fragment>
-                                                                                <h4>Grade Assigned: </h4>
+                                                                                <h4>Calificación: </h4>
                                                                                 {/* <span style={this.checkGradeColor(submission.grade_assigned)}>{submission.grade_assigned}</span> %</h4> */}
                                                                                 <div
                                                                                     className="ui indicating progress stats"
@@ -166,7 +166,7 @@ class SubmittedAssignments extends Component {
                                                             })
                                                             :
                                                             <div className="ui segment">
-                                                                <h1>No submissions yet!</h1>
+                                                                <h1>Todavía no hay entregas</h1>
                                                             </div>
                                                     }
                                                 </Fragment>
@@ -184,8 +184,8 @@ class SubmittedAssignments extends Component {
                         </MDBCol>
                         <MDBCol size="7" className="mx-auto float-none white z-depth-1 py-2 px-2 right">
                             <MDBCardBody>
-                                <MDBCardTitle>Select a Submission to View</MDBCardTitle>
-                                <p className="pb-4">Example of Material Design Form</p>
+                                <MDBCardTitle>Seleccionar</MDBCardTitle>
+                                <p className="pb-4">Revisar entrega</p>
 
                                 <div className="ten wide column">
                                     <div>
@@ -193,8 +193,7 @@ class SubmittedAssignments extends Component {
                                             this.state.currentSubmissionView ?
                                                 <Fragment>
                                                     <button onClick={this.handleSubmitGrade}
-                                                            className="ui green button">Submit
-                                                        Grade
+                                                            className="ui green button">Guardar calificaciones
                                                     </button>
                                                     {
                                                         this.props.currentAssignment.submissions.map(submission => {

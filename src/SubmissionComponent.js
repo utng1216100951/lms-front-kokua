@@ -48,13 +48,13 @@ class SubmissionComponent extends Component {
                             {/* <label>Information</label> */}
                             {problems.map(problem => {
                                 return <div className="ui segment" key={problem.id}>
-                                    <h2>Question: {problem.question}</h2>
+                                    <h2>Pregunta: {problem.question}</h2>
                                     
-                                    <textarea onChange={this.handleOnChange} required name={`answer${problems.indexOf(problem) + 1}`} placeholder="Solution" rows="2"></textarea>
+                                    <textarea onChange={this.handleOnChange} required name={`answer${problems.indexOf(problem) + 1}`} placeholder="Solución" rows="2"></textarea>
                                 </div>
                             })}   
                         </div>
-                        <input type="submit" value="Submit Assignment" className="ui submit button"></input>
+                        <input type="submit" value="Enviar respuestas" className="ui submit button"></input>
                     </form>
             </div>
         )
