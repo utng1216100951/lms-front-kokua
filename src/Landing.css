@@ -1,3 +1,14 @@
 #sectionCurInd {
 background: #ecfcff;
 }
+#heatitle{
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+}
+#texthead{
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+#video{
+    align-content: center;
+}

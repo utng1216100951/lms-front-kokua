@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {MDBBtn} from "mdbreact";
 
 class NewProblemsComponent extends Component {
     state = {
@@ -45,7 +46,7 @@ class NewProblemsComponent extends Component {
                         <div className="field">
                             <input onChange={this.handleOnChange} required placeholder="Question" type="text" name="question"/>
                         </div>
-                        <input type="submit" value="Submit Question" className="ui green submit button"></input>
+                    <MDBBtn gradient="aqua" type="submit" value="Submit Question" className="ui green submit button">Submit Question</MDBBtn>
                         
                     </form>
                     {/* {problems.map(problem => {

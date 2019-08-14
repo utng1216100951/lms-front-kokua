@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {MDBBtn, MDBIcon} from "mdbreact";
 
 
 class NewAnnouncementForm extends Component {
@@ -46,18 +47,18 @@ class NewAnnouncementForm extends Component {
                 <div className="two fields">
                     <div className="field">
                     {/* <label>First Name</label> */}
-                    <input onChange={this.handleOnChange} required placeholder="Title" type="text" name="title"/>
+                    <input onChange={this.handleOnChange} required placeholder="Título" type="text" name="title"/>
                     </div>
                     <div className="field">
                     {/* <label>Last Name</label> */}
-                    <input onChange={this.handleOnChange} placeholder="Video URL" type="text" name="video_url"/>
+                    <input onChange={this.handleOnChange} placeholder="URL del vídeo" type="text" name="video_url"/>
                     </div>
                 </div>
                 <div className="field">
                      {/* <label>Information</label> */}
-                     <textarea onChange={this.handleOnChange} required name="information" placeholder="Information" rows="2" ></textarea>
+                     <textarea onChange={this.handleOnChange} required name="information" placeholder="Información" rows="2" />
                  </div>
-                <input type="submit" value="Post New Announcement" className="ui submit green button"></input>
+                <MDBBtn gradient="peach" type="submit" value="Post New Announcement" className="ui submit">Publicar nueva clase</MDBBtn>
             </form>
         )
     }

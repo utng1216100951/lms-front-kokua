@@ -1,6 +1,15 @@
 import React from 'react'
-import {BrowserRouter as Router, Link} from 'react-router-dom';
-import {MDBBtn, MDBCollapse, MDBIcon, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBContainer, MDBNavbarToggler} from "mdbreact";
+import {Link} from 'react-router-dom';
+import {
+    MDBBtn,
+    MDBCollapse,
+    MDBContainer,
+    MDBIcon,
+    MDBNavbar,
+    MDBNavbarBrand,
+    MDBNavbarNav,
+    MDBNavbarToggler
+} from "mdbreact";
 import {connect} from 'react-redux';
 import './NavBar.css'
 
@@ -26,71 +35,71 @@ class NavBar extends React.Component {
         return (
             <div>
                 <header>
-                        <MDBNavbar color="bg-colorsin" fixed="top" dark expand="md" scrolling transparent >
-                            <MDBContainer>
-                                <MDBNavbarBrand id="logonav">kōkua UTNG</MDBNavbarBrand>
-                                {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
-                                <MDBCollapse isOpen={this.state.collapse} navbar>
-                                    <MDBNavbarNav className="mr-auto">
-                                        <MDBNavbarNav left>
-                                                <Link id="navitem" to="/home">Home</Link>
-                                                <Link id="navitem" to="/about">About</Link>
-                                        </MDBNavbarNav>
-                                        <MDBNavbarNav left>
+                    <MDBNavbar color="bg-colorsin" fixed="top" dark expand="md" scrolling transparent>
+                        <MDBContainer>
+                            <MDBNavbarBrand id="logonav">KōKUA</MDBNavbarBrand>
+                            {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick}/>}
+                            <MDBCollapse isOpen={this.state.collapse} navbar>
+                                <MDBNavbarNav className="mr-auto">
+                                    <MDBNavbarNav left>
+                                        <Link id="navitem" to="/home">Home</Link>
+                                        <Link id="navitem" to="/about">About</Link>
+                                    </MDBNavbarNav>
+                                    <MDBNavbarNav left>
 
-                                            {
-                                                Object.keys(currentUser).length !== 0 ?
-                                                    <h4 id="nombrenav">Hello, {currentUser.first_name}!</h4>
-                                                    :
-                                                    null
-                                            }
+                                        {
+                                            Object.keys(currentUser).length !== 0 ?
+                                                <h4 id="nombrenav">Hola, {currentUser.first_name}!</h4>
+                                                :
+                                                null
+                                        }
 
-                                        </MDBNavbarNav>
-                                        <MDBNavbarNav right>
-                                            {
-                                                Object.keys(currentUser).length !== 0 ?
-                                                    <React.Fragment>
+                                    </MDBNavbarNav>
+                                    <MDBNavbarNav right>
+                                        {
+                                            Object.keys(currentUser).length !== 0 ?
+                                                <React.Fragment>
 
 
-                                                            <Link id="navico"
-                                                                  to={currentUser.position === "teacher" ? "/newCourseForm" : "/registerCourse"}>
+                                                    <Link id="navico"
+                                                          to={currentUser.position === "teacher" ? "/newCourseForm" : "/registerCourse"}>
                                                             <span className="badge"
-                                                                  data-tooltip={currentUser.position === "teacher" ? "Add New Course" : "Register for New Course"}
+                                                                  data-tooltip={currentUser.position === "teacher" ? "Añadir un curso" : "Registrarse en un nuevo curso"}
                                                                   data-position="bottom left">
                                                             <MDBIcon far icon="plus-square" size="2x"/>
                                                             </span>
-                                                            </Link>
+                                                    </Link>
 
-                                                            <Link id="navitem" to="/courses">My Courses
-                                                            </Link>
-                                                        <Link id="navitem"
-                                                              to={currentUser.position === "teacher" ? `/profile/teacher/${currentUser.id}` : `/profile/student/${currentUser.id}`}>
-                                                            Profile
-                                                        </Link>
+                                                    <Link id="navitem" to="/courses">Mis Cursos
+                                                    </Link>
+                                                    <Link id="navitem"
+                                                          to={currentUser.position === "teacher" ? `/profile/teacher/${currentUser.id}` : `/profile/student/${currentUser.id}`}>
+                                                        Perfil
+                                                    </Link>
 
-                                                        <Link id="navitem" to="/home">
-                                                            <div onClick={logOutUser} className="">Log Out</div>
-                                                        </Link>
+                                                    <Link id="navitem" to="/home">
+                                                        <div onClick={logOutUser} className="">Salir</div>
+                                                    </Link>
 
-                                                    </React.Fragment>
-                                                    :
-                                                    <React.Fragment>
-                                                        <Link to="/login">
-                                                            <MDBBtn outline rounded gradient="aqua">Log in</MDBBtn>
-                                                        </Link>
-                                                        <Link to="/signUp">
-                                                            <MDBBtn outline color="purple" rounded><MDBIcon icon="user"
-                                                                                                            className="mr-2"></MDBIcon> Sign up!</MDBBtn>
-                                                        </Link>
+                                                </React.Fragment>
+                                                :
+                                                <React.Fragment>
+                                                    <Link to="/login">
+                                                        <MDBBtn outline rounded gradient="purple">Iniciar Sesión</MDBBtn>
+                                                    </Link>
+                                                    <Link to="/signUp">
+                                                        <MDBBtn outline rounded gradient="blue">
+                                                            <MDBIcon icon="user" className="mr-2"/>Registrate!</MDBBtn>
+                                                    </Link>
 
-                                                    </React.Fragment>
-                                            }
-                                        </MDBNavbarNav>
+                                                </React.Fragment>
+                                        }
                                     </MDBNavbarNav>
+                                </MDBNavbarNav>
 
-                                </MDBCollapse>
-                            </MDBContainer>
-                        </MDBNavbar>
+                            </MDBCollapse>
+                        </MDBContainer>
+                    </MDBNavbar>
                 </header>
             </div>
 

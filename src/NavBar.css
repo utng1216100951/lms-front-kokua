@@ -1,34 +1,44 @@
 
-#navitem{
-    padding: 0.6rem;
+#navitem {
+    padding: 0.8em;
     /* IMPORTANTE */
     text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
     color: azure;
-    font-family: 'Montserrat', sans-serif;
-}
-#navitem:hover{
-
-    background-color: rgba(99,99,99,0.2);
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
-#navico
-{
+#navitem:hover {
+    background-color: rgba(99, 99, 99, 0.2);
+}
+
+#navico {
     padding: .4rem;
     text-align: center;
 }
-#nombrenav{
-    padding: .3rem 1.5em;
+
+#nombrenav {
+    padding: .8rem 3em;
     text-align: center;
-    font-family: 'Lobster', cursive;
-    color: #b2fcff;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+    color: #61f2f5;
 }
-#logonav{
-    padding: .4rem;
+
+#logonav {
+    padding: .0em;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    font-size: x-large;
 }
-.bg-colorsin{
-    background: #35477d;
+
+.bg-colorsin {
+    background: #e15249;
+}
+
+.signavi {
+    background-color: white;
 }
 
 

@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import teacher from './noun_Teacher_642198.svg'
-import student from './noun_student_63368.svg'
+import React, {Component} from 'react'
+import teacher from './imgs/teacher.jpg'
+import student from './imgs/student.jpg'
+import './SignUp.css'
+import {connect} from 'react-redux';
+
 
 // const axios = require('axios');
 // let imageURL;
@@ -28,22 +30,22 @@ class SignUp extends Component {
         this.setState({
             position: position
         })
-    } 
+    }
 
     timeOut = () => {
         window.setTimeout(() => {
             this.setState({
-              errors: []
+                errors: []
             });
-          }, 2000);
+        }, 2000);
     }
 
     handleOnSubmit = (e) => {
         e.preventDefault()
-        const {username, password, first_name,last_name,bio,image_url,position} = this.state
+        const {username, password, first_name, last_name, bio, image_url, position} = this.state
         // console.log(e.target)
         // let position = this.state.position
-        if(position){
+        if (position) {
             fetch(`https://lmskokua.herokuapp.com/api/v1/${this.state.position}s`, {
                 method: "POST",
                 headers: {
@@ -65,130 +67,173 @@ class SignUp extends Component {
                         position: position
                     }
                 })
-            }) 
-            .then(res => res.json())
-            .then(user => {
-                // console.log(user.errors)
-                if(user.errors){
-                    // alert(user.errors)
-                    this.setState({
-                        errors: user.errors
-                    })
-                    this.timeOut()
-                }
-                else{
-                    localStorage.setItem("token", user.jwt)
-                    // console.log(Object.keys(user)[0])
-                    // console.log(user[Object.keys(user)[0]])
-                    this.props.changeUser(user[Object.keys(user)[0]]) //since either a teacher or student key is returned, utilizing Object keys was best
-                    this.props.history.push('/courses')
-                } 
             })
-        }
-        else{
+                .then(res => res.json())
+                .then(user => {
+                    // console.log(user.errors)
+                    if (user.errors) {
+                        // alert(user.errors)
+                        this.setState({
+                            errors: user.errors
+                        })
+                        this.timeOut()
+                    } else {
+                        localStorage.setItem("token", user.jwt)
+                        // console.log(Object.keys(user)[0])
+                        // console.log(user[Object.keys(user)[0]])
+                        this.props.changeUser(user[Object.keys(user)[0]]) //since either a teacher or student key is returned, utilizing Object keys was best
+                        this.props.history.push('/courses')
+                    }
+                })
+        } else {
             // alert('Please choose if a teacher or student')
             this.setState({
-                errors: [...this.state.errors, "Please choose if a teacher or student"]
+                errors: [...this.state.errors, "Por favor seleccionar Maestro o Estudiante"]
             })
             this.timeOut()
-        }  
+        }
     }
+
     render() {
         // console.log(this.props.history)
         return (
-            <div className="ui container">
-                <div className="ui buttons">
-                        <button onClick={() => this.handleOnClick('teacher')} className="ui button">Teacher</button>
-                        <div className="or"></div>
-                        <button onClick={() => this.handleOnClick('student')} className="ui button">Student</button>
-                </div>
-                <br></br>
-                <br></br>
-                {this.state.position ?
-                    <div className="ui segment" style={{width: "100px", height: "100px", margin: "auto"}}>
-                        {
-                        this.state.position === "teacher" ?
-                            <img src={teacher}></img>
-                            :
-                            <img src={student}></img>
-                        }
-                    </div> 
-                    
-                    : 
-                    null
-                }
-                <br></br>
-                <br></br>
-                <form className="ui form" onSubmit={this.handleOnSubmit}>
-                    <div className="field">
-                        <label>Username</label>
-                        <input type="text" name="username" required onChange={this.handleOnChange} value={this.state.username} placeholder="User Name"/>
-                    </div>
 
-                    <div className="field">
-                        <label>Password</label>
-                        <input type="password" name="password" required onChange={this.handleOnChange} value={this.state.password} placeholder=" Password"/>
-                    </div>
-
-                    <div className="field">
-                        <label>First Name</label>
-                        <input type="text" name="first_name" required onChange={this.handleOnChange} value={this.state.first_name} placeholder="First Name"/>
-                    </div>
-
-                    <div className="field">
-                        <label>Last Name</label>
-                        <input type="text" name="last_name" required onChange={this.handleOnChange} value={this.state.last_name} placeholder="Last Name"/>
-                    </div>
-
-                    <div className="field">
-                        <label>Bio</label>
-                        <input type="text" name="bio" required onChange={this.handleOnChange} value={this.state.bio} placeholder="Small Bio"/>
-                    </div>
-
-                    <div className="field">
-                        <label>Image URL</label>
-                        <input type="text" name="image_url" required onChange={this.handleOnChange} value={this.state.image_url} placeholder="Image URL"/>
-                        {/* <input type="file" className="inputfile ui huge button" name="image_url" required onChange={this.handlePhotoUpload} placeholder="Image URL"/> */}
-                        
-                    </div>
-                    
-
-                    <button className="ui button" type="submit">Sign Up</button>
-                </form>      
-                <br></br>
-                <br></br>
-                
-                {
-                    this.state.errors.length !== 0 ? 
-
-                    <div className="ui error message">
-                        <div className="header">
-                            Errors with your submission
+            <div className="container-sign">
+                <div className="imgLogin">
+                    {this.state.position ?
+                        <div className="segment">
+                            {
+                                this.state.position === "teacher" ?
+                                    <img className="imgfonlog" src={teacher} alt="teacher"/>
+                                    :
+                                    <img className="imgfonlog" src={student} alt="student"/>
+                            }
                         </div>
-                        <ul className="list">
-                        {this.state.errors.map(error => {
-                            return <li key={this.state.errors.indexOf(error)}>{error}</li>
-                        })
-                        }
-                        </ul>
+                        :
+                        null
+                    }
+                </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-3 col-md-2"/>
+                        <div className="col-lg-6 col-md-8 login-box">
+
+                            <div className="col-lg-12 login-title">
+                                Registrarse
+                            </div>
+                            <div className="col-lg-12 login-form">
+                                <form onSubmit={this.handleOnSubmit}>
+                                    <button onClick={() => this.handleOnClick('teacher')}
+                                            className="button-login">Maestro
+                                    </button>
+                                    <button onClick={() => this.handleOnClick('student')}
+                                            className="button-login">Estudiante
+                                    </button>
+                                    <div className="row">
+                                        <div className="col-6">
+                                            <div className="form-group">
+                                                <label className="form-control-label">Usuario</label>
+                                                <input type="text" className="form-control" name="username" required
+                                                       onChange={this.handleOnChange} value={this.state.username}
+                                                       placeholder="Usuario"/>
+
+                                            </div>
+                                        </div>
+                                        <div className="col">
+                                            <div className="form-group">
+                                                <label className="form-control-label">Contraseña</label>
+                                                <input type="password" className="form-control" name="password" required
+                                                       onChange={this.handleOnChange} value={this.state.password}
+                                                       placeholder=" Contraseña"/>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col-6">
+                                            <div className="form-group">
+                                                <label className="form-control-label">Nombre(s)</label>
+                                                <input type="text" className="form-control space" name="first_name"
+                                                       required
+                                                       onChange={this.handleOnChange} value={this.state.first_name}
+                                                       placeholder="Nombre(s)"/>
+
+                                            </div>
+                                        </div>
+                                        <div className="col-6">
+                                            <div className="form-group">
+                                                <label className="form-control-label">Apellidos(s)</label>
+                                                <input type="text" className="form-control space" name="last_name"
+                                                       required
+                                                       onChange={this.handleOnChange} value={this.state.last_name}
+                                                       placeholder="Apellido(s)"/>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="form-group">
+                                        <label className="form-control-label">Descripción</label>
+                                        <input type="text" className="form-control space" name="bio" required
+                                               onChange={this.handleOnChange} value={this.state.bio}
+                                               placeholder="Descripción personal"/>
+
+                                    </div>
+                                    <div className="form-group">
+                                        <label className="form-control-label">Imagen del usuario</label>
+                                        <input type="text" className="form-control space" name="image_url" required
+                                               onChange={this.handleOnChange} value={this.state.image_url}
+                                               placeholder="URL de la imagen"/>
+
+                                    </div>
+                                    <div className="col-lg-12 loginbttm">
+                                        <div className="col-lg-12 login-btm login-text">
+                                            {
+                                                this.state.errors.length !== 0 ?
+
+                                                    <div className="alert alert-danger" role="alert">
+                                                        <h5>Error al registrarse</h5>
+                                                        <ul className="list">
+                                                            {this.state.errors.map(error => {
+                                                                return <li
+                                                                    key={this.state.errors.indexOf(error)}>{error}</li>
+                                                            })
+                                                            }
+                                                        </ul>
+                                                    </div>
+
+                                                    :
+                                                    null
+                                            }
+                                        </div>
+
+                                        <div className="col-lg-12 login-btm login-button">
+                                            <button type="submit" className="btn peach-gradient">Registrarse</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div className="col-lg-3 col-md-2"></div>
+                        </div>
                     </div>
-                    
-                    :
-                    null
-                }
+                </div>
 
             </div>
-            
+
         )
     }
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
     return {
         changeUser: (userObj) => {
-            dispatch({type:"SET_USER", payload: userObj})
+            dispatch({type: "SET_USER", payload: userObj})
         }
     }
-} 
+}
 
 export default connect(null, mapDispatchToProps)(SignUp)

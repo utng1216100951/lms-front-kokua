@@ -1,0 +1,69 @@
+.container-profile{
+    background: linear-gradient(135deg, #ffffff, #ffffff) ;
+    height: 100%;
+}
+
+.info-profile{
+    /*background-image: url("http://fepe.club/wp-content/uploads//2018/08/five-wallpaper-math-white-stick-figures-in-blue-teardrops-surround-other-stick-figures-on-a-blue-background-matthew-williamson-wallpaper-deya.jpg");*/
+    /*background-image: url("https://besthqwallpapers.com/Uploads/1-10-2017/22251/thumb2-geometric-figures-4k-art-android-geometry.jpg");*/
+    /*background-image: url("https://www.desktopbackground.org/p/2014/05/20/765514_download-wallpapers-3840x2160-lines-figures-light-geometric-4k_3840x2160_h.jpg");*/
+    background: linear-gradient(135deg, #000046, #1CB5E0) ;
+    color: #FFFFFF;
+}
+
+.image-profile{
+    padding: 5%;
+}
+
+.title{
+    padding-top: 5%;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text{
+    text-align: left;
+}
+
+.paddingButton{
+    padding-top: 10px;
+}
+
+.radius-image{
+    height: 200px;
+    width: 200px;
+    border-radius: 180px;
+    border:2px solid #FFFFFF;
+}
+
+.button-profile{
+    margin-top: 30px;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    margin-left: 6%;
+    margin-right: 6%;
+    border:0.1em solid #000000;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#000000;
+    text-align:center;
+    transition: all 0.2s;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.button-profile:hover{
+    color:#FFFFFF;
+    background-color:#000000;
+}
+@media all and (max-width:30em) {
+     button-login {
+        display: block;
+        margin: 0.4em auto;
+    }
+}
+
+
