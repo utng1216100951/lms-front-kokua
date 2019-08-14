@@ -147,7 +147,7 @@ class Assignment extends Component {
                             
                             :
                             this.props.assignment.problems.length !== 0 ?
-                                <MDBBtn gradient="peach" onClick={() => this.props.handleAssignmentClick(this.props.assignment)} className="ui button">Start</MDBBtn>
+                                <MDBBtn gradient="peach" onClick={() => this.props.handleAssignmentClick(this.props.assignment)} className="ui button">Iniciar</MDBBtn>
                             :
                                 <MDBBtn gradient="peach"  className="ui disabled button">No hay preguntas asignadas</MDBBtn>
                         }
