@@ -6,9 +6,11 @@ background: #ecfcff;
     font-family: 'Abril Fatface', cursive;
 }
 #texthead{
-    color: white;
+    color: #fff6da;
     font-family: 'Montserrat Alternates', sans-serif;
 }
 #video{
     align-content: center;
+}
+.imagenfondo{
 }

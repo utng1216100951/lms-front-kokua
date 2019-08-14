@@ -16,6 +16,9 @@ import {
     MDBView
 } from "mdbreact";
 import './Landing.css'
+import tacho from "./imgs/tacho.jpg"
+import torres from "./imgs/torres.jpg"
+
 
 
 class LandingPage extends Component {
@@ -37,8 +40,8 @@ class LandingPage extends Component {
                 {
                     /* HEADER   */
                 }
-                <MDBView
-                    src={`https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940`}>
+                <MDBView className="imagenfondo"
+                    src={`https://images.unsplash.com/photo-1548092372-0d1bd40894a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80`}>
                     <MDBMask className="rgba-purple-slight d-flex justify-content-center align-items-center">
                         <MDBContainer>
                             <MDBRow>
@@ -224,11 +227,11 @@ class LandingPage extends Component {
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://res.cloudinary.com/dl6vtbln4/image/upload/avatar.png" style={{height: "205px",width:"300px"}} waves/>
+                                                  src={tacho} style={{height: "205px",width:"300px"}} waves/>
                                     <MDBCardBody>
                                         <MDBCardTitle>Anastacio Rodríguez</MDBCardTitle>
                                         <MDBCardText>
-                                            "El educado difiere del no educado tanto como el que vive difiere del muerto"
+                                            "El educado difiere del no educado, tanto como el que vive difiere del muerto"
                                         </MDBCardText>
                                     </MDBCardBody>
                                 </MDBCard>
@@ -236,7 +239,7 @@ class LandingPage extends Component {
                             <MDBCol md="3">
                                 <MDBCard style={{width: "17rem"}}>
                                     <MDBCardImage className="img-fluid"
-                                                  src="https://pbs.twimg.com/profile_images/1143141947298611202/EvVbuqgR_400x400.jpg" style={{height: "205px",width:"300px"}} waves/>
+                                                  src={torres} style={{height: "205px",width:"300px"}} waves/>
                                     <MDBCardBody>
                                         <MDBCardTitle>Javier Torres</MDBCardTitle>
                                         <MDBCardText>
