@@ -95,13 +95,39 @@ function CourseCard(props) {
                 props.removeCourse(props.course.id)
             })
     }
+    var imagenes2da = new Array();
+    imagenes2da[0] = "https://dev-res.thumbr.io/libraries/14/04/09/lib/1533172648445_1.jpg?size=854x493s&ext=jpg"; //Fundamentos
+    imagenes2da[1] = "https://hackr.io/blog/wp-content/uploads/2019/04/Top-Devops-Tools-1280x800.png"; //devops
+    imagenes2da[2] = "https://greca.mx/images/servicios/desarrollo-web-main.jpg"; //web
+    imagenes2da[3] = "http://www.wardtechtalent.com/wp-content/uploads/2013/11/wttblog28.jpg"; //mob
+    imagenes2da[4] = "https://assets.pcmag.com/media/images/566524-a-single-board-computer.jpg?width=810&height=456"; //hard
 
     return (
         <div className="column">
             <MDBCol>
                 <MDBCard className="course" style={{width: "22rem"}}>
-                    <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
+
+                    {props.course.subject.name === 'DevOps' &&
+                    <MDBCardImage className="img-fluid" src={imagenes2da[1]}
                                   waves/>
+                    }
+                    {props.course.subject.name === 'Fundamentos' &&
+                    <MDBCardImage className="img-fluid" src={imagenes2da[0]}
+                                  waves/>
+                    }
+                    {props.course.subject.name === 'Desarrollo Móvil' &&
+                    <MDBCardImage className="img-fluid" src={imagenes2da[3]}
+                                  waves/>
+                    }
+                    {props.course.subject.name === 'Desarrollo Web' &&
+                    <MDBCardImage className="img-fluid" src={imagenes2da[2]}
+                                  waves/>
+                    }
+                    {props.course.subject.name === 'Hardware' &&
+                    <MDBCardImage className="img-fluid" src={imagenes2da[4]}
+                                  waves/>
+                    }
+
                     <MDBCardBody><Link to={{
                         pathname: `/courses/${props.course.id}`,
                         courseProps: props.course
