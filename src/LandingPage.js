@@ -60,9 +60,9 @@ class LandingPage extends Component {
                                 <MDBCol md="6" className="align-content-lg-center">
                                     <div className="embed-responsive embed-responsive-16by9">
                                         {/* eslint-disable-next-line jsx-a11y/iframe-has-title */}
-                                        <iframe className="embed-responsive-item"
-                                                src="https://www.youtube.com/embed/vlDzYIIOYmM"
-                                                align="middle"/>
+
+                                        <iframe className="embed-responsive-item" src="https://player.vimeo.com/video/353887967" width="640" height="564"
+                                                frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
                                     </div>
                                 </MDBCol>
                             </MDBRow>
