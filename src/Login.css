@@ -196,3 +196,12 @@ label {
     width: 100%;
     padding: 0px;
 }
+.headercurso{
+    background: linear-gradient(135deg, #12c2e9, #f64f59) ;
+    padding-top: 100px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.dropi{
+    z-index: 4;
+}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import {MDBBtn, MDBContainer, MDBJumbotron} from "mdbreact";
+import {Animated} from "react-animated-css";
 
 const newCourseFormStyle = {
     border: "2px solid black",
@@ -71,44 +73,56 @@ class NewCourseForm extends Component {
         // console.log(this.props.currentUser.id)
         // console.log(this.state)
         return (
-            <div className="ui container" style={newCourseFormStyle}>
-                <br></br>
-                <h1>New Course Form</h1>
-                <form className="ui form" onSubmit={this.handleSubmit}>
-                    <div className="field">
-                        <label>Course Name</label>
-                        <input onChange={this.handleOnChange} style={{width: "80%"}} required type="text" name="name" placeholder="Course Name"/>
-                        
-                        <br></br>
+            <div>
+                <MDBJumbotron fluid className={"headercurso"}>
+                    <MDBContainer>
+                        <Animated animationIn="fadeInRight" animationInDuration={2000} animationOut="fadeOut"
+                                  isVisible={true}>
+                            <div className="row">
 
-                        <select onChange={this.handleOnChange} style={{width: "80%", margin: "auto"}} name="subject_id" className="ui fluid dropdown">
-                            <option value="">Select Subject</option>
-                            
-                            {this.props.subjects.map(subject => {
-                                return <option key={subject.id} value={subject.id}>{subject.name}</option>
-                            })}
-                        </select>
+                            </div>
+                        </Animated>
+                    </MDBContainer>
+                </MDBJumbotron>
+                <div className="ui container">
+                    <br></br>
+                    <h1>Crear Curso</h1>
+                    <form className="ui form" onSubmit={this.handleSubmit}>
+                        <div className="field">
+                            <label>Nombre del curso</label>
+                            <input onChange={this.handleOnChange} style={{width: "80%"}} required type="text" name="name" placeholder="Nombre"/>
 
-                        <br></br>
+                            <br></br>
 
-                        <button className="ui button" type="submit">Submit</button>
-                    </div>
-                </form>
-                {
-                    this.state.errors ? 
-                    <div className="ui error message">
-                        <div className="header">
-                            Errors with your submission
+                            <select onChange={this.handleOnChange} style={{width: "80%", margin: "auto"}} name="subject_id" className="ui fluid dropdown">
+                                <option value="">Seleccinar materia</option>
+
+                                {this.props.subjects.map(subject => {
+                                    return <option key={subject.id} value={subject.id}>{subject.name}</option>
+                                })}
+                            </select>
+
+                            <br></br>
+                            <MDBBtn gradient="peach" type="submit">Crear</MDBBtn>
                         </div>
-                        <ul className="list">
-                            <li>{this.state.errors}</li>
-                        </ul>
-                    </div>
-                    :
-                    null
-                }
-                
+                    </form>
+                    {
+                        this.state.errors ?
+                            <div className="ui error message">
+                                <div className="header">
+                                    Error al crear
+                                </div>
+                                <ul className="list">
+                                    <li>{this.state.errors}</li>
+                                </ul>
+                            </div>
+                            :
+                            null
+                    }
+
+                </div>
             </div>
+
         )
     }
 }

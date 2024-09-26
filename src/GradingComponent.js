@@ -56,18 +56,17 @@ export default class GradingComponent extends Component {
         return (
            
             <div className="ui segment">
-                <h1>Question: {question}</h1>
-                <p>Answer: {answer}</p>
+                <h2>Pregunta: {question}</h2>
+                <p>Respuesta: {answer}</p>
                 {
                     this.state.errorMessage ?
                     <h3>{this.state.errorMessage}</h3>
                     :
                     null
                 }
-                {/* <input type="number" required style={{width: "50%"}} placeholder="Assign Points" name="points_assigned" onChange={this.handleOnChange} ></input> */}
-                {/* <select className="ui search dropdown" name="points_assigned" onChange={this.handleOnChange}> */}
+
                 <select className="ui search dropdown" name="points_assigned" onChange={this.handleAssignPointClick}>
-                    <option value="">Points</option>
+                    <option value="">Puntos</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
